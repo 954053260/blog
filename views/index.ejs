@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>博客</title>
+  <link rel='stylesheet' href='/css/style.css'/>
+  <script src="/js/lib/jquery.js"></script>
+</head>
+<body>
+<div>
+  <h4>注册</h4>
+  <div>
+    <label>
+      账号:<input id="name" type="text"/>
+    </label>
+  </div>
+  <div>
+    <label> 密码:<input id="pwd" type="password"/></label>
+  </div>
+  <div>
+    <label>
+      邮箱:<input id="email" type="email"/>
+    </label>
+  </div>
+  <button id="reg-btn">注册</button>
+</div>
+<script>
+  $(document).ready(function () {
+    $('#reg-btn').click(function () {
+      var user = {
+        name: $('#name').val(),
+        password: $('#pwd').val(),
+        email: $('#email').val()
+      };
+      $.post('/user/resetPwd', user,
+              function (data) {
+                console.log('success',data);
+              },
+              function (error) {
+                console.log('error',error);
+              }
+      );
+    });
+  });
+</script>
+</body>
+</html>
