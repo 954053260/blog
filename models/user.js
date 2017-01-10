@@ -1,7 +1,8 @@
 /**
  * Created by hyt on 2016/12/30.
  */
-var mongodb = require('./db');
+var DB = require('./db');
+var mongodb = DB.mongodb;
 function User(user) {
     this.name = user.name;
     this.password = user.password;
@@ -34,11 +35,7 @@ User.find = function (name, callback) {
 
 //save user info
 User.prototype.save = function (callback) {
-    var user = {
-        name: this.name,
-        password: this.password,
-        email: this.email
-    };
+    var self = this;
     User.find(this.name,function (err,data) {
         if (err) {
             return callback(err);
@@ -55,7 +52,7 @@ User.prototype.save = function (callback) {
                         mongodb.close();
                         return callback(err);
                     }
-                    collection.insert(user, {
+                    collection.insert(self, {
                         safe: true
                     }, function (err, user) {
                         mongodb.close();
@@ -73,9 +70,6 @@ User.prototype.save = function (callback) {
 //update user info
 User.prototype.update = function (callback) {
     var self = this;
-    var $set = {};
-    self.password && ($set.password = self.password);
-    self.email && ($set.email = self.email);
     mongodb.open(function (err, db) {
         if (err) {
             return callback(err);
@@ -85,7 +79,7 @@ User.prototype.update = function (callback) {
                 mongodb.close();
                 return callback(err);
             }
-            collection.update({name: self.name},{$set: $set}, {
+            collection.update({name: self.name},{$set: DB.copyObject(self)}, {
                 safe: true
             }, function (err, user) {
                 mongodb.close();

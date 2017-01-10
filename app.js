@@ -9,6 +9,7 @@ var MongoStore = require('connect-mongo')(session);
 var config = require('./config.js');
 var index = require('./routes/index');
 var userRouter = require('./routes/userRouter');
+var articleRouter = require('./routes/articleRouter');
 var app = express();
 
 // view engine setup
@@ -28,16 +29,22 @@ app.use(session({
     url: 'mongodb://localhost/blog'
   })
 }));
-
+//设置头部
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Credentials','true');
+  next();
+});
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', index);
 app.use('/', userRouter);
-
+app.use('/', articleRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
