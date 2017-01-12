@@ -4,10 +4,13 @@ function Article (article) {
   this.id = article.id;
   this.title = article.title;
   this.des = article.des;
+  this.type = article.type;
   this.author = article.author;
-  this.readNum = article.readNum;
-  this.commentNum = article.commentNum;
+  this.readNum = article.readNum || 0;
+  this.commentNum = article.commentNum  || 0;
+  this.comment = article.comment || [];
   this.date = article.date;
+  this.detail = article.detail;
 }
 
 //find one

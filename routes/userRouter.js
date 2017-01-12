@@ -8,10 +8,14 @@ router.post('/user/login', function(req, res, next) {
       res.send({status: 1,msg: '登录失败'});
       return console.error('/user/login', err);
     }
-    if(data.password == req.body.pwd){
-      res.send({status: 0,msg: '登录成功',data: data});
+    if(data){
+      if(data.password == req.body.pwd){
+        res.send({status: 0,msg: '登录成功',data: data});
+      }else{
+        res.send({status: 2,msg: '密码错误'});
+      }
     }else{
-      res.send({status: 2,msg: '密码错误'});
+      res.send({status: 3,msg: '用户名不存在'});
     }
   });
 });
