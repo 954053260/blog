@@ -8,7 +8,7 @@ function Article (article) {
   this.author = article.author;
   this.readNum = article.readNum || 0;
   this.commentNum = article.commentNum  || 0;
-  this.comment = article.comment || [];
+  this.comment = article.comment;//数组
   this.date = article.date;
   this.detail = article.detail;
 }

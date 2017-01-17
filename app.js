@@ -6,18 +6,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
+var flash = require('connect-flash');
 var config = require('./config.js');
 var index = require('./routes/index');
 var userRouter = require('./routes/userRouter');
 var articleRouter = require('./routes/articleRouter');
 var app = express();
-
-// view engine setup
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//设置视图目录
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// flash 中间键，用来显示通知
+app.user(flash());
 app.use(session({
   secret: config.mongodb.cookieSecret,
   key: config.mongodb.db,//cookie name
@@ -57,7 +57,6 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
   // render the error page
   res.status(err.status || 500);
   res.render('error');
