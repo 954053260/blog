@@ -1,12 +1,7 @@
 <template>
     <header id="header" class="header">
         <img height="78" width="196" title="logo" class="header-logo" src="src/assets/logo.png">
-        <nav class="header-nav">
-            <router-link :to="item.to"
-                         v-for="(item,i) in navArr">
-                <span>{{item.name}}</span>
-            </router-link>
-        </nav>
+        <p class="text">开始新的旅途，记录每个瞬间</p>
     </header>
 </template>
 <script>
@@ -17,16 +12,26 @@
         },
         data: function () {
             return {
-                navArr: [
-                    {to: '/home', name: '首页'},
-                    {to: '/home', name: '归档'},
-                    {to: '/navigation', name: '导航'},
-                    {to: '/home', name: '关于'}
-                ]
+
             }
         }
     }
 </script>
-<style>
-
+<style scoped>
+    .header{
+        padding: 20px;
+        height: 78px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .header-logo{
+        float: left;
+    }
+    .header .text{
+        float: right;
+        font-family: 隶书;
+        font-weight: bold;
+        font-style: italic;
+        color: #333;
+    }
 </style>
