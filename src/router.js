@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 import home from './view/home.vue'
 import works from './view/works.vue'
 import navigation from './view/navigation.vue'
-import about from './view/about.vue'
+import file from './view/file.vue'
 import email from './view/email.vue'
 import articleDetail from './view/articleDetail.vue'
 Vue.use(VueRouter);
@@ -17,7 +17,7 @@ const router = new VueRouter({
         { path: '/home',component: home},
         { path: '/works',component: works},
         { path: '/navigation',component: navigation},
-        { path: '/about',component: about},
+        { path: '/file',component: file},
         { path: '/email',component: email},
         { path: '/articleDetail',component: articleDetail}
     ]

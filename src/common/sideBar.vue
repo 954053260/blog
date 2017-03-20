@@ -1,14 +1,22 @@
 <template>
-    <div id="sideBar" class="side-bar" style="left: 0">
-        <i class="toggle icon" :class="{'ion-ios-arrow-left': toggle,'ion-ios-arrow-right': !toggle}" @click="toggleSide()"></i>
+    <div id="sideBar" class="side-bar">
         <img height="60" src="src/assets/myQR.png">
         <ul class="nav">
             <li v-for="(item,i) in navArr">
                 <router-link :to="item.to">
                     <i class="icon" :class="item.icon"></i>
-                    <span>{{item.name}}</span>
+                    <span class="name">{{item.name}}</span>
                     <i class="icon ion-ios-arrow-right"></i>
                 </router-link>
+            </li>
+            <li class="title">文章分类</li>
+            <li class="tags" v-for="(item,i) in tags">
+                <a>
+                    <span class="tag-number">{{i + 1}}</span>
+                    <span class="name">{{item.name}}</span>
+                    <i class="icon ion-ios-arrow-right"></i>
+                    <span class="nav-note">{{item.number}}</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -24,24 +32,32 @@
                 toggle: true,
                 navArr: [
                     {to: '/home', icon: 'ion-ios-home', name: '首页'},
+                    {to: '/file', icon: 'ion-ios-paper', name: '归档'},
                     {to: '/works', icon: 'ion-ios-camera', name: '作品'},
                     {to: '/navigation', icon: 'ion-ios-navigate', name: '导航'},
-                    {to: '/about', icon: 'ion-ios-paper', name: '关于'},
                     {to: '/email', icon: 'ion-ios-email', name: '留言'}
+                ],
+                tags: [
+                    {
+                        id: '1',
+                        name: 'HTML',
+                        number: 10
+                    },
+                    {
+                        id: '2',
+                        name: 'CSS',
+                        number: 12
+                    },
+                    {
+                        id: '3',
+                        name: 'JavaScript',
+                        number: 52
+                    }
                 ]
             }
         },
         methods: {
-            toggleSide: function () {
-                var left = parseInt(this.$el.style.left.replace('px',0));
-                this.toggle = left != 0;
-                if (this.toggle) {
-                    this.$el.style.left = 0;
-                } else {
-                    this.$el.style.left = '-300px';
-                }
-                this.$emit('toggleSide', {toggle: this.toggle, width: 300});
-            }
+
         }
     }
 </script>
@@ -51,23 +67,21 @@
         top: 0;
         bottom: 0;
         left: 0;
-        width: 300px;
+        width: 299px;
         color: #555;
+        font-size: 14px;
         border-right: 1px solid #ddd;
         text-align: center;
-        z-index: 9999;
-        transition: left .3s;
-        -moz-transition: left .3s;	/* Firefox 4 */
-        -webkit-transition: left .3s;	/* Safari 和 Chrome */
-        -o-transition: left .3s;	/* Opera */
+        overflow-y: auto;
+        overflow-x: hidden;
     }
     .side-bar > img{
         padding: 20px;
     }
     .side-bar .nav{
+        margin-bottom: 20px;
         text-align: left;
     }
-
     .side-bar .nav a{
         display: block;
         line-height: 25px;
@@ -83,18 +97,32 @@
         float: left;
         margin-right: 10px;
         font-size: 25px;
+        color: #0678b7;
     }
     .side-bar .nav .ion-ios-arrow-right{
         float: right;
         margin-right: 0;
+        margin-left: 10px;
     }
-    .side-bar .toggle{
-        position: absolute;
-        right: -30px;
-        top: 10px;
+    .side-bar .title{
+        padding: 10px 20px;
+        font-weight: bold;
+    }
+    .side-bar .nav-note{
+        float: right;
+        color: #888;
+    }
+    .side-bar .tag-number{
+        float: left;
+        margin-top: 2.5px;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 12px;
         color: #fff;
-        width: 30px;
-        background: rgba(0, 0, 0, 0.5);
-        cursor: pointer;
+        background: #0678b7;
+        border-radius: 4px;
     }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <side-bar @toggleSide="toggleSide"></side-bar>
+    <side-bar></side-bar>
     <div ref="wrap" class="wrap">
+      <i class="icon ion-navicon-round" @click="toggleSide()"></i>
       <div class="content">
         <v-header></v-header>
         <router-view :style="{ minHeight: minHeight + 'px' }"></router-view>
@@ -30,16 +31,14 @@
     data: function () {
       return {
         isRender: false,
+        isToggleSide: true,
         minHeight: 0
       }
     },
     methods: {
-      toggleSide: function (data) {
-        if (data.toggle) {
-          this.$refs.wrap.style.marginLeft = data.width + 'px';
-        } else {
-          this.$refs.wrap.style.marginLeft = 0;
-        }
+      toggleSide: function () {
+        this.isToggleSide = !this.isToggleSide;
+        this.$refs.wrap.style.marginLeft = this.isToggleSide ? '300px' : 0;
       }
     }
   }
@@ -51,5 +50,12 @@
    -webkit-transition: margin .3s;	/* Safari 和 Chrome */
    -o-transition: margin .3s;	/* Opera */
  }
+  .ion-navicon-round{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 25px;
+    color: #0678b7;
+  }
 </style>
 

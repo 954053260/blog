@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb67f8a9-bba1-41a3-a44e-1259018f9792" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/ionicons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/ionicons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/ionicons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/myQR.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/about.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/app.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/email.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/css/ionicons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fonts/ionicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/sideBar.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/works.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/file.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/filter.js" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\about.vue" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/app.vue" afterPath="$PROJECT_DIR$/src/view/app.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/email.vue" afterPath="$PROJECT_DIR$/src/view/email.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/header.vue" afterPath="$PROJECT_DIR$/src/common/header.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/home.vue" afterPath="$PROJECT_DIR$/src/view/home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/src/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/sideBar.vue" afterPath="$PROJECT_DIR$/src/common/sideBar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/works.vue" afterPath="$PROJECT_DIR$/src/view/works.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blog.iws" />
@@ -39,8 +35,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -134,38 +140,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,7 +250,13 @@
       <option name="project" value="LOCAL" />
       <updated>1489635975960</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="添加登录接口">
+      <created>1489744921495</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1489744921495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -336,6 +316,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

@@ -3,6 +3,7 @@ import './css/ionicons.min.css'
 import './css/github-markdown.css'
 import Vue from 'vue'
 import router from './router.js'
+import filter from './filter.js'
 import app from './view/app.vue'
 new Vue({
   el: '#main',

@@ -1,6 +1,6 @@
 <template>
   <div id="works">
-    <h3>作品</h3>
+    <p>暂无</p>
   </div>
 </template>
 <script type="text/ecmascript-6">

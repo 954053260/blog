@@ -6,7 +6,7 @@
           <h2 class="post-title">
             <a class="post-title-link">{{item.title}}</a>
           </h2>
-          <div class="post-info">2016年11月14日
+          <div class="post-info">{{item.date | date('yyyy-MM-dd')}}
             <a v-for="tag in item.tags" :title="tag.name" class="post-tag">#{{tag.name}}</a>
           </div>
           <div class="post-content">{{item.content}}
@@ -22,28 +22,10 @@
     name:'home',
     data: function () {
       return {
-        minH: 0,
-        tags: [
-          {
-            id: '1',
-            name: 'HTML',
-            number: 10
-          },
-          {
-            id: '2',
-            name: 'CSS',
-            number: 2
-          },
-          {
-            id: '3',
-            name: 'JavaScript',
-            number: 111
-          }
-        ],
         list: [
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             tags: [
               {
                 name: 'CSS',
@@ -59,7 +41,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -76,7 +58,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -93,7 +75,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -110,7 +92,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -127,7 +109,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -144,7 +126,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -161,7 +143,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -178,7 +160,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -195,7 +177,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
@@ -212,7 +194,7 @@
           },
           {
             title: '[文] 笔记：IE 下透明度问题',
-            date: '2016年11月14日',
+            date: new Date(),
             reprint: 'https:www.baidu.com',
             tags: [
               {
