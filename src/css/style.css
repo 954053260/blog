@@ -240,3 +240,8 @@ input,textarea{
 .navigation-item a{
     color: #0678b7;
 }
+/*animate*/
+.toast-pop-enter,
+.toast-pop-leave-active{
+    opacity: 0
+}

@@ -16,10 +16,10 @@ var router = express.Router();
  * @param len 返回列表数据长度 默认返回全部
  */
 router.get('/getList', function(req, res) {
-    var start = req.query.start || 0,
-        len = req.query.len,
+    var start = parseInt(req.query.start) || 0,
+        len = parseInt(req.query.len) + 1,
         sql;
-    if(isNaN(parseInt(start)) || isNaN(parseInt(len))){
+    if(isNaN(start) || isNaN(len)){
         res.send({status: 5,msg: '参数错误'});
         return;
     }
@@ -31,6 +31,12 @@ router.get('/getList', function(req, res) {
             res.send({status: 6,msg: '查询错误'});
             return;
         }
+        var isHasData = true;
+        if (row.length == 11) {
+            row.pop();
+        } else {
+            isHasData = false;
+        }
         row.map(function (item) {
             item.tags = item.tags.split(',').map(function (item) {
                 var arr = item.split(':');
@@ -41,7 +47,7 @@ router.get('/getList', function(req, res) {
         });
         res.send({
             status: 0,
-            data: {list: row}
+            data: {list: row,isHasData: isHasData}
         });
     });
 });

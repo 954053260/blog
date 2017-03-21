@@ -2,18 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb67f8a9-bba1-41a3-a44e-1259018f9792" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/file.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/filter.js" />
-      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\about.vue" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/app.vue" afterPath="$PROJECT_DIR$/src/view/app.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/email.vue" afterPath="$PROJECT_DIR$/src/view/email.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/home.vue" afterPath="$PROJECT_DIR$/src/view/home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/sideBar.vue" afterPath="$PROJECT_DIR$/src/common/sideBar.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/works.vue" afterPath="$PROJECT_DIR$/src/view/works.vue" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\app.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\bin\www" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\model\Article.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\mysqlDB.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\package.json" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\public\stylesheets\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\routes\article.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\routes\index.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\routes\users.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\views\error.jade" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\views\index.jade" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\server\views\layout.jade" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\assets\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\assets\logo.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\assets\md.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\assets\myQR.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\common\commentForm.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\common\header.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\common\sideBar.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\common\toTop.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\css\github-markdown.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\css\ionicons.min.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\css\style.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\filter.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\fonts\ionicons.eot" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\fonts\ionicons.svg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\fonts\ionicons.ttf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\fonts\ionicons.woff" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\main.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\router.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\app.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\articleDetail.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\email.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\file.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\home.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\navigation.vue" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hyt\Desktop\blog\src\view\works.vue" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blog.iws" />
@@ -35,8 +60,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/css/style.css">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.181818">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="www" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/bin/www">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -45,8 +80,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="blog.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -124,7 +159,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,9 +178,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,7 +323,19 @@
       <option name="project" value="LOCAL" />
       <updated>1489744921495</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="添加登录接口">
+      <created>1490003519521</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1490003519521</updated>
+    </task>
+    <task id="LOCAL-00010" summary="提交数据库文件">
+      <created>1490003745246</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1490003745246</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -292,7 +371,8 @@
     <MESSAGE value="mint" />
     <MESSAGE value="添加文章接口" />
     <MESSAGE value="添加登录接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加登录接口" />
+    <MESSAGE value="提交数据库文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交数据库文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -301,6 +381,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blog.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -315,7 +411,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
+    <entry file="file://$PROJECT_DIR$/blog.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -324,6 +420,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.181818">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
