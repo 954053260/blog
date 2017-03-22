@@ -52,6 +52,35 @@
         }
     }
 </script>
-<style>
-
+<style scoped>
+    .comment-form p{
+        margin: 10px 0;
+        line-height: 30px;
+    }
+    .comment-form label{
+        color: #666;
+    }
+    .comment-form input{
+        height: 28px;
+        width: 250px;
+        border: 1px solid #39f;
+    }
+    .comment-form textarea{
+        display: block;
+        padding: 5px;
+        width: 100%;
+        max-width: 450px;
+        height: 200px;
+        border: 1px solid #39f;
+    }
+    .comment-form .submit{
+        width: 100px;
+        height: 36px;
+        background-color: #f0f3f9;
+        color: #333;
+        overflow: visible;
+        cursor: pointer;
+        box-shadow: 1px 1px #AFC4EA, 2px 2px #AFC4EA, 3px 3px #AFC4EA;
+        font-size: 14px;
+    }
 </style>

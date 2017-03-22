@@ -5,8 +5,10 @@
         <h3>{{item.date | date('yyyy-MM')}}</h3>
         <ul>
           <li class="file-item" v-for="article in item.articles">
-            {{article.title}}
-            <span class="file-item-note">{{article.date | date('yyyy-MM-dd')}}</span>
+            <a>
+              {{article.title}}
+              <span class="file-item-note">{{article.date | date('yyyy-MM-dd')}}</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -70,10 +72,12 @@
 <style scoped>
   .file-list h3{
     margin: 15px 0;
+    font-size: 16px;
   }
   .file-item{
     margin: 10px 0;
-    color: #0678b7;
+    color: #39f;
+    font-size: 14px;
   }
   .file-item-note{
     float: right;

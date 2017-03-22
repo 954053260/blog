@@ -76,7 +76,7 @@
         overflow-x: hidden;
     }
     .side-bar > img{
-        padding: 20px;
+        margin: 20px;
     }
     .side-bar .nav{
         margin-bottom: 20px;
@@ -97,7 +97,7 @@
         float: left;
         margin-right: 10px;
         font-size: 25px;
-        color: #0678b7;
+        color: #39f;
     }
     .side-bar .nav .ion-ios-arrow-right{
         float: right;
@@ -122,7 +122,7 @@
         text-align: center;
         font-size: 12px;
         color: #fff;
-        background: #0678b7;
+        background: #39f;
         border-radius: 4px;
     }
 </style>

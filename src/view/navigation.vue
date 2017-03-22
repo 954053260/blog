@@ -10,6 +10,18 @@
     </ul>
   </div>
 </template>
+<style scoped>
+  .navigation-list{
+    padding: 0 20px;
+  }
+  .navigation-item{
+    margin: 10px 0;
+  }
+  .navigation-item a{
+    color: #39f;
+    font-size: 14px;
+  }
+</style>
 <script>
   export default {
     name:'navigation',

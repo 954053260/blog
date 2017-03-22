@@ -32,7 +32,7 @@ router.get('/getList', function(req, res) {
             return;
         }
         var isHasData = true;
-        if (row.length == 11) {
+        if (row.length == len) {
             row.pop();
         } else {
             isHasData = false;

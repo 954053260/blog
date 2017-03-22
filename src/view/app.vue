@@ -5,7 +5,7 @@
       <i class="icon ion-navicon-round" @click="toggleSide()"></i>
       <div class="content">
         <v-header></v-header>
-        <router-view :style="{ minHeight: minHeight + 'px' }"></router-view>
+        <router-view :style="{ minHeight: minHeight + 'px' ,position: 'relative'}"></router-view>
         <footer v-show="isRender" class="footer" style="display: none">
           <p>blog制作中@小唐</p>
           <to-top></to-top>
@@ -55,7 +55,7 @@
     left: 10px;
     top: 10px;
     font-size: 25px;
-    color: #0678b7;
+    color: #39f;
   }
 </style>
 

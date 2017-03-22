@@ -58,6 +58,6 @@
     }
     .to-top svg{
         width: 30px;
-        fill: #0678b7;
+        fill: #39f;
     }
 </style>
