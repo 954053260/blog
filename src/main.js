@@ -4,6 +4,7 @@ import './css/style.css'
 import './css/github-markdown.css'
 import Vue from 'vue'
 import router from './router.js'
+import store from './store'
 import filter from './filter.js'
 import app from './view/app.vue'
 import ajax from './ajax.js'
@@ -16,6 +17,7 @@ Vue.use(ajax, {
 new Vue({
   el: '#main',
   router,
+  store,
   created: function () {
 
   },

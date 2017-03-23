@@ -7,7 +7,6 @@ function Article (article) {
     this.date = article.date || new Date();
     this.desc = article.desc;
     this.detail = article.detail;
-    this.tags = article.tags;
     this.author = article.author;
 }
 

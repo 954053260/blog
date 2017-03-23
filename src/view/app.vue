@@ -2,6 +2,14 @@
   <div id="app">
     <side-bar></side-bar>
     <div ref="wrap" class="wrap">
+      <!--<div class="spin">-->
+        <!--<div class="spin-content">-->
+          <!--<Spin>-->
+            <!--<Icon type="load-c" size=25 class="spin-icon-load"></Icon>-->
+            <!--<p>加载中...</p>-->
+          <!--</Spin>-->
+        <!--</div>-->
+      <!--</div>-->
       <i class="icon ion-navicon-round" @click="toggleSide()"></i>
       <div class="content">
         <v-header></v-header>
@@ -44,12 +52,12 @@
   }
 </script>
 <style scoped>
- .wrap{
-   transition: margin .3s;
-   -moz-transition: margin .3s;	/* Firefox 4 */
-   -webkit-transition: margin .3s;	/* Safari 和 Chrome */
-   -o-transition: margin .3s;	/* Opera */
- }
+  .wrap{
+    transition: margin .3s;
+    -moz-transition: margin .3s;	/* Firefox 4 */
+    -webkit-transition: margin .3s;	/* Safari 和 Chrome */
+    -o-transition: margin .3s;	/* Opera */
+  }
   .ion-navicon-round{
     position: absolute;
     left: 10px;
@@ -57,5 +65,35 @@
     font-size: 25px;
     color: #39f;
   }
+  .spin{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+  }
+  .spin-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -22.5px;
+    margin-left: -22.5px;
+  }
+  .spin-content p{
+    color: #fff;
+    font-size: 14px;
+  }
+  .spin-icon-load{
+    color: #fff;
+    animation: ani-spin 1s linear infinite;
+  }
+  @keyframes ani-spin {
+    from { transform: rotate(0deg);}
+    50%  { transform: rotate(180deg);}
+    to   { transform: rotate(360deg);}
+  }
+
 </style>
 

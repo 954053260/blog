@@ -9,6 +9,7 @@
 var express = require('express');
 var db = require('../mysqlDB');
 var Article = require('../model/Article');
+var Comment = require('../model/Comment');
 var router = express.Router();
 /**
  * 获取文章列表——GET
@@ -24,7 +25,7 @@ router.get('/getList', function(req, res) {
         return;
     }
     sql = 'select article.id,article.`desc`,article.title,article.date,article.author,group_concat(tag.id,":",tag.name) as tags ' +
-        'from article_to_tag att left join tag on att.t_id = tag.id left join article on article.id = att.a_id group by article.id order by article.date ' +
+        'from article_to_tag att left join tag on att.t_id = tag.id left join article on article.id = att.a_id group by article.id order by article.date DESC ' +
         'limit ' + start + ',' + len;
     db.query(sql,function (err, row) {
         if (err) {
@@ -79,6 +80,65 @@ router.get('/detail', function(req, res) {
                 msg: '未找到文章'
             });
         }
+    });
+});
+/**
+ * 获取文章评论——GET articleId or refId
+ * @param id 文章id or 子评论id
+ * @param type 1，获取文章评论 2，获取子评论
+ */
+router.get('/comment', function (req, res) {
+    var id = req.query.id,
+        type = req.query.type,
+        sql;
+    if(!id || !type){
+        res.send({status: 5,msg: '参数错误'});
+        return;
+    }
+    sql = 'SELECT * FROM comment WHERE ' + (type == 1 ? 'article_id' : 'ref_id') + ' = ' + db.pool.escape(id) + ' order by date DESC';
+    db.query(sql,function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '查询错误'});
+            return;
+        }
+        res.send({
+            status: 0,
+            data: {list: row}
+        });
+    });
+});
+/**
+ * 提交文章评论——post
+ * @param text:'',author:'',email:'',refId:'',articleId:''
+ */
+router.post('/submitComment', function (req, res) {
+    var comment = new Comment(req.body),
+        sql = 'INSERT INTO comment (text, date, author, email, ref_id, article_id) VALUES (' +
+            db.pool.escape(comment.text) + ',' + db.pool.escape(comment.date) + ',' + db.pool.escape(comment.author) +
+            ',' + db.pool.escape(comment.email) + ',' + db.pool.escape(comment.refId) + ',' + db.pool.escape(comment.articleId) + ')';
+    db.query(sql,function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '查询错误'});
+            return;
+        }
+        res.send({
+            status: 0,
+            data: {id: row.insertId}
+        });
+    });
+});
+
+router.get('/tags', function (req, res) {
+    var sql = 'SELECT * FROM tag';
+    db.query(sql,function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '查询错误'});
+            return;
+        }
+        res.send({
+            status: 0,
+            data: {list: row}
+        });
     });
 });
 module.exports = router;

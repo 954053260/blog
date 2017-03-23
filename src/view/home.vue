@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <ul class="post-list">
-      <li class="post-list-item" v-for="item in article.viewList">
+      <li class="post-list-item" v-for="item in article.data[pageIndex]">
         <article class="post-block">
           <h2 class="post-title">
             <a class="post-title-link">{{item.title}}</a>
@@ -34,37 +34,39 @@
     data: function () {
       return {
         isLoading: false,
-        pageIndex: 0,
         article: {
           isHasData: true,//是否还有数据
-          list: [],//文章数据
-          viewList: []//当前展示数据
+          total: 0,//文章数量
+          data: {}//文章数据
         }
       }
     },
     computed: {
+      total: function () {
+        return Math.max(this.article.total,this.pageIndex*10 + 1);
+      },
+      pageIndex: function () {
+        return this.$store.state.home.pageIndex;
+      },
       isLastPage: function () {
-        console.log(Math.ceil(this.article.list/1),this.pageIndex != (Math.ceil(this.article.list/1) - 1),this.article.isHasData)
-        return this.pageIndex != (Math.ceil(this.article.list.length/1) - 1) || this.article.isHasData;
+        return this.$store.state.home.pageIndex != (Math.floor((this.total-1)/10)) || this.article.isHasData;
       }
     },
     methods: {
       getArticles: function () {
-        let start = this.pageIndex*1;
-        let end = (this.pageIndex + 1)*1;
-        let list = this.article.list.slice(start,end);
-        if (list.length) {
-          this.article.viewList = list;
+        if (this.article.data[this.pageIndex]) {
           return;
         }
         this.$http.get('article/getList',{data: {
-          start: this.article.list.length,
-          len: 1
+          start: this.pageIndex*10,
+          len: 10
         }}).then((data) => {
           if (data.status == 0) {
-            this.article.list = this.article.list.concat(data.data.list);
-            this.article.isHasData = data.data.isHasData;
-            this.article.viewList = this.article.list.slice(start,end);
+            this.article.total += data.data.list.length;
+            this.article.data[this.pageIndex] = data.data.list;
+            if (this.article.isHasData) {
+              this.article.isHasData = data.data.isHasData;
+            }
           } else {
             this.$Message.error(data.msg);
           }
@@ -74,13 +76,19 @@
       },
       prePage: function () {
         if (this.pageIndex) {
-          this.pageIndex -= 1;
+          this.$store.state.home.pageIndex -= 1;
           this.getArticles();
         }
       },
       lastPage: function () {
-        this.pageIndex += 1;
+        this.$store.state.home.pageIndex += 1;
         this.getArticles();
+      }
+    },
+    watch: {
+      '$route': function (to, from) {
+        // 对路由变化作出响应...
+        console.log('路由改变',this.$route.query.tag);
       }
     }
   }

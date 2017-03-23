@@ -27,11 +27,20 @@ input,textarea{
 .c-000{
     color: #000;
 }
+.c-999{
+    color: #999;
+}
 .c-00afec{
     color: #39f;
 }
 .dp-n{
     display: none
+}
+.fl{
+    float: left
+}
+.fr{
+    float: right;
 }
 .p0-20{
     padding: 0 20px;
@@ -105,17 +114,4 @@ input,textarea{
 }
 .toast-enter, .toast-leave-to{
     top: -100px;
-}
-.spin-icon-load{
-    animation: ani-spin 1s linear infinite;
-}
-@keyframes ani-spin {
-    from { transform: rotate(0deg);}
-    50%  { transform: rotate(180deg);}
-    to   { transform: rotate(360deg);}
-}
-.spin-col{
-    height: 100px;
-    position: relative;
-    border: 1px solid #eee;
 }

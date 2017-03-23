@@ -14,7 +14,8 @@
     "iview": "^2.0.0-rc.6",
     "style-loader": "^0.13.2",
     "vue": "^2.1.0",
-    "vue-router": "^2.3.0"
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

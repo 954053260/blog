@@ -1,6 +1,6 @@
 <template>
     <div id="sideBar" class="side-bar">
-        <img height="60" src="src/assets/myQR.png">
+        <img height="100" src="src/assets/myQR.jpg">
         <ul class="nav">
             <li v-for="(item,i) in navArr">
                 <router-link :to="item.to">
@@ -11,21 +11,29 @@
             </li>
             <li class="title">文章分类</li>
             <li class="tags" v-for="(item,i) in tags">
-                <a>
+                <router-link :to="'/home?tag=' + item.id">
                     <span class="tag-number">{{i + 1}}</span>
                     <span class="name">{{item.name}}</span>
                     <i class="icon ion-ios-arrow-right"></i>
                     <span class="nav-note">{{item.number}}</span>
-                </a>
+                </router-link>
             </li>
         </ul>
     </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
     export default {
         name:'sideBar',
         created: function () {
-
+            this.$http.get('article/tags',{}).then((data) => {
+                if (data.status == 0) {
+                    this.tags = data.data.list;
+                } else {
+                    this.$Message.error(data.msg);
+                }
+            },(err) => {
+                this.$Message.error(err.msg);
+            });
         },
         data: function () {
             return {
@@ -37,23 +45,7 @@
                     {to: '/navigation', icon: 'ion-ios-navigate', name: '导航'},
                     {to: '/email', icon: 'ion-ios-email', name: '留言'}
                 ],
-                tags: [
-                    {
-                        id: '1',
-                        name: 'HTML',
-                        number: 10
-                    },
-                    {
-                        id: '2',
-                        name: 'CSS',
-                        number: 12
-                    },
-                    {
-                        id: '3',
-                        name: 'JavaScript',
-                        number: 52
-                    }
-                ]
+                tags: []
             }
         },
         methods: {
@@ -71,16 +63,16 @@
         color: #555;
         font-size: 14px;
         border-right: 1px solid #ddd;
-        text-align: center;
         overflow-y: auto;
         overflow-x: hidden;
     }
     .side-bar > img{
-        margin: 20px;
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
     }
     .side-bar .nav{
         margin-bottom: 20px;
-        text-align: left;
     }
     .side-bar .nav a{
         display: block;

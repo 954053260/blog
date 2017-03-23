@@ -17,14 +17,15 @@
                 </label>
             </p>
             <p>
-                <label class="dp-n"><input  name="articleId" :value="articleId"/></label>
-                <label class="dp-n"><input  name="refId" :value="refId"/></label>
-                <input type="submit" class="submit" value="提交评论" @click="submitComment()">
+                <Button type="primary" :loading="loading" @click="submitComment()">
+                    <span v-if="!loading">提交评论</span>
+                    <span v-else>Loading...</span>
+                </Button>
             </p>
         </div>
     </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
     export default {
         name:'commentForm',
         created: function () {
@@ -33,6 +34,7 @@
         props: ['param','articleId','refId'],
         data: function () {
             return {
+                loading: false,
                 author: '',
                 email: '',
                 text: ''
@@ -40,13 +42,30 @@
         },
         methods: {
             submitComment: function () {
-                this.$emit('submitComment',{
-                    id: '',
-                    date: new Date(),
+                this.loading = true;
+                this.$http.post('article/submitComment',{data: {
+                    text: this.text,
                     author: this.author,
                     email: this.email,
-                    text: this.text,
-                    param: this.param
+                    refId: this.refId,
+                    articleId: this.articleId,
+                }}).then((data) => {
+                    this.loading = false;
+                    if (data.status == 0) {
+                        this.$emit('submitComment',{
+                            id: data.data.id,
+                            date: new Date(),
+                            author: this.author,
+                            email: this.email,
+                            text: this.text,
+                            param: this.param
+                        });
+                    } else {
+                        this.$Message.error(data.msg);
+                    }
+                },(err) => {
+                    this.loading = false;
+                    this.$Message.error(err.msg);
                 });
             }
         }
