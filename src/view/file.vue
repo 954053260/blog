@@ -63,10 +63,10 @@
           }
         ]
       }
-  },
-  methods: {
+    },
+    methods: {
 
-  }
+    }
   }
 </script>
 <style scoped>

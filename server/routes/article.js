@@ -12,21 +12,65 @@ var Article = require('../model/Article');
 var Comment = require('../model/Comment');
 var router = express.Router();
 /**
+ * 获取归档列表——GET
+ */
+router.get('/arrange', function(req, res) {
+    db.query('select id, title, date from article order by date DESC', function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '查询错误'});
+            return;
+        }
+        var nowYear = new Date().getFullYear(),
+            nowMonth = new Date().getMonth(),
+            data = [{date: new Date (nowYear,nowMonth),list: []}];
+        if (row.length > 0) {
+            row.forEach(function (item) {
+                if (item.date.getTime() >= new Date(nowYear,nowMonth).getTime()) {
+                    var lastValue = data.pop();
+                    lastValue.list.push(item);
+                    data.push(lastValue);
+                } else {
+                    nowYear = item.date.getFullYear();
+                    nowMonth = item.date.getMonth();
+                    data.push({date: new Date (nowYear,nowMonth),list: [item]});
+                }
+            });
+            res.send({
+                status: 0,
+                data: data
+            });
+        } else {
+            res.send({
+                status: 1,
+                msg: '未找到文章'
+            });
+        }
+    });
+});
+/**
  * 获取文章列表——GET
+ * @param tag 标签搜索 可选
  * @param start 起始索引 默认0
  * @param len 返回列表数据长度 默认返回全部
  */
 router.get('/getList', function(req, res) {
     var start = parseInt(req.query.start) || 0,
         len = parseInt(req.query.len) + 1,
+        tag = req.query.tag,
         sql;
     if(isNaN(start) || isNaN(len)){
         res.send({status: 5,msg: '参数错误'});
         return;
     }
-    sql = 'select article.id,article.`desc`,article.title,article.date,article.author,group_concat(tag.id,":",tag.name) as tags ' +
-        'from article_to_tag att left join tag on att.t_id = tag.id left join article on article.id = att.a_id group by article.id order by article.date DESC ' +
-        'limit ' + start + ',' + len;
+    if (tag) {
+        sql = "select article.id,article.`desc`,article.title,article.date,article.author,(select CONCAT(id,':',name) " +
+            "from tag where id = " + db.pool.escape(tag) + ") as tags from article_to_tag att left join article on att.a_id = article.id  where " +
+            "att.t_id = " + db.pool.escape(tag) + " order by article.date DESC limit " + start + "," + len;
+    } else {
+        sql = 'select article.id,article.`desc`,article.title,article.date,article.author,group_concat(tag.id,":",tag.name) as tags ' +
+            'from article_to_tag att left join tag on att.t_id = tag.id left join article on article.id = att.a_id group by article.id order by article.date DESC ' +
+            'limit ' + start + ',' + len;
+    }
     db.query(sql,function (err, row) {
         if (err) {
             res.send({status: 6,msg: '查询错误'});

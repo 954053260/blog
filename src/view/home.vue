@@ -29,7 +29,7 @@
   export default {
     name:'home',
     created: function () {
-      this.getArticles();
+      this.init().getArticles();
     },
     data: function () {
       return {
@@ -53,11 +53,21 @@
       }
     },
     methods: {
+      init: function () {
+        this.isLoading = false;
+        this.article = {
+          isHasData: true,//是否还有数据
+          total: 0,//文章数量
+          data: {}//文章数据
+        }
+        return this;
+      },
       getArticles: function () {
         if (this.article.data[this.pageIndex]) {
           return;
         }
         this.$http.get('article/getList',{data: {
+          tag: this.$route.query.tag,
           start: this.pageIndex*10,
           len: 10
         }}).then((data) => {
@@ -87,13 +97,15 @@
     },
     watch: {
       '$route': function (to, from) {
-        // 对路由变化作出响应...
-        console.log('路由改变',this.$route.query.tag);
+        this.init().getArticles();
       }
     }
   }
 </script>
 <style scoped>
+  #home{
+    padding-bottom: 32px;
+  }
   .post-list{
     margin: 5px 0 10px;
     padding: 0 20px;
@@ -114,7 +126,6 @@
   .post-title-link{
     padding-bottom: 6px;
   }
-  .post-from,
   .post-tag{
     display: inline-block;
     margin-left: 5px;
@@ -122,10 +133,6 @@
   }
   .post-from{
     color: #E36B6B;
-  }
-  .post-info {
-    color: #7f8c8d;
-    margin: 8px 0;
   }
   .post-content{
     line-height: 1.7;
@@ -140,6 +147,9 @@
     word-break: break-all;
   }
   .page-btn{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
   }
   .page-btn > button{

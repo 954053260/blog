@@ -69,7 +69,7 @@
     .side-bar > img{
         display: block;
         margin: 20px auto;
-        border-radius: 50%;
+        border-radius: 5px;
     }
     .side-bar .nav{
         margin-bottom: 20px;
