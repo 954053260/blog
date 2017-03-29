@@ -1,86 +1,60 @@
 <template>
   <div id="file">
-    <div class="file-list">
-      <div v-for="item in list">
-        <h3>{{item.date | date('yyyy-MM')}}</h3>
-        <ul>
-          <li class="file-item" v-for="article in item.articles">
-            <a>
-              {{article.title}}
-              <span class="file-item-note">{{article.date | date('yyyy-MM-dd')}}</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <Timeline>
+      <Timeline-item v-for="item in list" class="file-item">
+        <p class="time">{{item.date | date('yyyy-MM')}}</p>
+        <p class="content" v-for="value in item.list">
+          <router-link :to="'/articleDetail?id='+ value.id" title="阅读全文" class="read-more">{{value.title}}
+            <span class="file-item-note">{{value.date | date('yyyy-MM-dd')}}</span>
+          </router-link>
+        </p>
+      </Timeline-item>
+    </Timeline>
   </div>
 </template>
 <script type="text/ecmascript-6">
   export default {
     name: 'file',
+    created: function () {
+      this.getFile();
+    },
     data: function () {
       return {
-        list: [
-          {
-            date: new Date ().getTime(),
-            articles: [
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime(),
-              },
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime() - 1000*3600*24*3,
-              },
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime() - 1000*3600*24*5,
-              }
-            ]
-          },
-          {
-            date: new Date ().getTime() - 1000*3600*24*30,
-            articles: [
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime(),
-              },
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime() - 1000*3600*24*35,
-              },
-              {
-                id: '2990',
-                title: '[文] 笔记：IE 下透明度问题',
-                date: new Date ().getTime() - 1000*3600*24*40,
-              }
-            ]
-          }
-        ]
+        list: []
       }
     },
     methods: {
-
+      getFile: function () {
+        this.$http.get('article/arrange',{}).then((data) => {
+          if (data.status == 0) {
+            this.list = data.data;
+          } else {
+            this.$Message.error(data.msg);
+          }
+        },(err) => {
+          this.$Message.error(err.msg);
+        });
+      }
     }
   }
 </script>
 <style scoped>
-  .file-list h3{
-    margin: 15px 0;
-    font-size: 16px;
-  }
   .file-item{
-    margin: 10px 0;
-    color: #39f;
-    font-size: 14px;
+    padding: 0;
   }
   .file-item-note{
     float: right;
     color: #999;
+  }
+  .time{
+    margin-top: -1px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .content{
+    padding-left: 5px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #39f;
   }
 </style>

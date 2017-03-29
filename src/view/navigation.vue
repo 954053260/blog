@@ -3,7 +3,7 @@
     <ul class="navigation-list">
       <li class="navigation-item" v-for="(item,index) in navList">
         <a :href="item.href">
-            <em class="c-000">{{index+1}}.</em>
+            <span class="c-000">{{index+1}}.</span>
             {{item.name || item.href}}
         </a>
       </li>

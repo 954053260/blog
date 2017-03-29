@@ -10,7 +10,9 @@
           <!--</Spin>-->
         <!--</div>-->
       <!--</div>-->
-      <i class="icon ion-navicon-round" @click="toggleSide()"></i>
+      <a class="nav-icon" @click="toggleSide()">
+        <Icon type="navicon-round" color="#39f" size="25"/>
+      </a>
       <div class="content">
         <v-header></v-header>
         <router-view :style="{ minHeight: minHeight + 'px' ,position: 'relative'}"></router-view>
@@ -58,10 +60,9 @@
     -webkit-transition: margin .3s;	/* Safari 和 Chrome */
     -o-transition: margin .3s;	/* Opera */
   }
-  .ion-navicon-round{
+  .nav-icon{
     position: absolute;
     left: 10px;
-    top: 10px;
     font-size: 25px;
     color: #39f;
   }

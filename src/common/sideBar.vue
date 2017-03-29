@@ -4,9 +4,9 @@
         <ul class="nav">
             <li v-for="(item,i) in navArr">
                 <router-link :to="item.to">
-                    <i class="icon" :class="item.icon"></i>
+                    <Icon :type="item.icon" size="25" color="#39f" class="icon"></Icon>
                     <span class="name">{{item.name}}</span>
-                    <i class="icon ion-ios-arrow-right"></i>
+                    <Icon type="ios-arrow-right" size="25" color="#999" class="icon-right"></Icon>
                 </router-link>
             </li>
             <li class="title">文章分类</li>
@@ -14,7 +14,7 @@
                 <router-link :to="'/home?tag=' + item.id">
                     <span class="tag-number">{{i + 1}}</span>
                     <span class="name">{{item.name}}</span>
-                    <i class="icon ion-ios-arrow-right"></i>
+                    <Icon type="ios-arrow-right" size="25" color="#999" class="icon-right"></Icon>
                     <span class="nav-note">{{item.number}}</span>
                 </router-link>
             </li>
@@ -39,11 +39,11 @@
             return {
                 toggle: true,
                 navArr: [
-                    {to: '/home', icon: 'ion-ios-home', name: '首页'},
-                    {to: '/file', icon: 'ion-ios-paper', name: '归档'},
-                    {to: '/works', icon: 'ion-ios-camera', name: '作品'},
-                    {to: '/navigation', icon: 'ion-ios-navigate', name: '导航'},
-                    {to: '/email', icon: 'ion-ios-email', name: '留言'}
+                    {to: '/home', icon: 'ios-home', name: '首页'},
+                    {to: '/file', icon: 'ios-paper', name: '归档'},
+                    {to: '/works', icon: 'ios-camera', name: '作品'},
+                    {to: '/navigation', icon: 'ios-navigate', name: '导航'}
+//                    {to: '/email', icon: 'ios-email', name: '留言'}
                 ],
                 tags: []
             }
@@ -88,10 +88,8 @@
     .side-bar .nav .icon{
         float: left;
         margin-right: 10px;
-        font-size: 25px;
-        color: #39f;
     }
-    .side-bar .nav .ion-ios-arrow-right{
+    .side-bar .nav .icon-right{
         float: right;
         margin-right: 0;
         margin-left: 10px;
