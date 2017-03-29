@@ -10,7 +10,7 @@
             <a v-for="tag in item.tags" :title="tag.name" class="post-tag">#{{tag.name}}</a>
           </div>
           <div class="post-content">{{item.desc}}
-            <router-link :to="'/articleDetail?id='+ item.id" title="阅读全文" class="read-more">[阅读全文]</router-link>
+            <router-link :to="'/app/articleDetail?id='+ item.id" title="阅读全文" class="read-more">[阅读全文]</router-link>
           </div>
         </article>
       </li>

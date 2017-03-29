@@ -1,6 +1,10 @@
 <template>
     <div id="sideBar" class="side-bar">
-        <img height="100" src="src/assets/myQR.jpg">
+        <img height="100" src="../assets/myQR.jpg">
+        <div class="header-tags">
+            <a href="https://github.com/954053260" target="_blank">Github</a>
+            <a href="http://www.cnblogs.com/xt911129/" target="_blank">博客园</a>
+        </div>
         <ul class="nav">
             <li v-for="(item,i) in navArr">
                 <router-link :to="item.to">
@@ -11,7 +15,7 @@
             </li>
             <li class="title">文章分类</li>
             <li class="tags" v-for="(item,i) in tags">
-                <router-link :to="'/home?tag=' + item.id">
+                <router-link :to="'/app/home?tag=' + item.id">
                     <span class="tag-number">{{i + 1}}</span>
                     <span class="name">{{item.name}}</span>
                     <Icon type="ios-arrow-right" size="25" color="#999" class="icon-right"></Icon>
@@ -39,11 +43,12 @@
             return {
                 toggle: true,
                 navArr: [
-                    {to: '/home', icon: 'ios-home', name: '首页'},
-                    {to: '/file', icon: 'ios-paper', name: '归档'},
-                    {to: '/works', icon: 'ios-camera', name: '作品'},
-                    {to: '/navigation', icon: 'ios-navigate', name: '导航'}
-//                    {to: '/email', icon: 'ios-email', name: '留言'}
+                    {to: '/app/home', icon: 'ios-home', name: '首页'},
+                    {to: '/app/file', icon: 'ios-paper', name: '归档'},
+                    {to: '/app/works', icon: 'ios-camera', name: '作品'},
+                    {to: '/app/navigation', icon: 'ios-navigate', name: '导航'},
+                    {to: '/server', icon: 'person', name: '管理'}
+//                    {to: '/app/email', icon: 'ios-email', name: '留言'}
                 ],
                 tags: []
             }
@@ -70,6 +75,14 @@
         display: block;
         margin: 20px auto;
         border-radius: 5px;
+    }
+    .side-bar .header-tags{
+        margin: 10px 0;
+        text-align: center;
+    }
+    .side-bar .header-tags a{
+        padding:0 10px;
+        color: #39f;
     }
     .side-bar .nav{
         margin-bottom: 20px;

@@ -2,7 +2,7 @@
   <div id="navigation">
     <ul class="navigation-list">
       <li class="navigation-item" v-for="(item,index) in navList">
-        <a :href="item.href">
+        <a :href="item.href" target="_blank">
             <span class="c-000">{{index+1}}.</span>
             {{item.name || item.href}}
         </a>

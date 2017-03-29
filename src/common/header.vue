@@ -1,6 +1,6 @@
 <template>
     <header id="header" class="header">
-        <img height="78" width="196" title="logo" class="header-logo" src="src/assets/logo.png">
+        <img height="78" width="196" title="logo" class="header-logo" src="../assets/logo.png">
         <p class="text">开始新的旅途，记录每个瞬间</p>
     </header>
 </template>

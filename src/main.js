@@ -1,5 +1,4 @@
 import 'iview/dist/styles/iview.css'
-import './css/ionicons.min.css'
 import './css/style.css'
 import './css/github-markdown.css'
 import Vue from 'vue'
@@ -23,6 +22,5 @@ new Vue({
   },
   mounted: function () {
 
-  },
-  render: h=>h(app)
+  }
 });

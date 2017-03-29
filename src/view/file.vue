@@ -4,7 +4,7 @@
       <Timeline-item v-for="item in list" class="file-item">
         <p class="time">{{item.date | date('yyyy-MM')}}</p>
         <p class="content" v-for="value in item.list">
-          <router-link :to="'/articleDetail?id='+ value.id" title="阅读全文" class="read-more">{{value.title}}
+          <router-link :to="'/app/articleDetail?id='+ value.id" title="阅读全文" class="read-more">{{value.title}}
             <span class="file-item-note">{{value.date | date('yyyy-MM-dd')}}</span>
           </router-link>
         </p>
