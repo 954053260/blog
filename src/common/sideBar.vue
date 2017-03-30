@@ -8,9 +8,9 @@
         <ul class="nav">
             <li v-for="(item,i) in navArr">
                 <router-link :to="item.to">
-                    <Icon :type="item.icon" size="25" color="#39f" class="icon"></Icon>
+                    <i class="icon" :class="item.icon"></i>
                     <span class="name">{{item.name}}</span>
-                    <Icon type="ios-arrow-right" size="25" color="#999" class="icon-right"></Icon>
+                    <i class="icon ion-ios-arrow-right ion-right"></i>
                 </router-link>
             </li>
             <li class="title">文章分类</li>
@@ -18,7 +18,7 @@
                 <router-link :to="'/app/home?tag=' + item.id">
                     <span class="tag-number">{{i + 1}}</span>
                     <span class="name">{{item.name}}</span>
-                    <Icon type="ios-arrow-right" size="25" color="#999" class="icon-right"></Icon>
+                    <i class="icon ion-ios-arrow-right ion-right"></i>
                     <span class="nav-note">{{item.number}}</span>
                 </router-link>
             </li>
@@ -33,21 +33,21 @@
                 if (data.status == 0) {
                     this.tags = data.data.list;
                 } else {
-                    this.$Message.error(data.msg);
+                    this.$toast.info(data.msg);
                 }
             },(err) => {
-                this.$Message.error(err.msg);
+                this.$toast.info(err.msg);
             });
         },
         data: function () {
             return {
                 toggle: true,
                 navArr: [
-                    {to: '/app/home', icon: 'ios-home', name: '首页'},
-                    {to: '/app/file', icon: 'ios-paper', name: '归档'},
-                    {to: '/app/works', icon: 'ios-camera', name: '作品'},
-                    {to: '/app/navigation', icon: 'ios-navigate', name: '导航'},
-                    {to: '/server', icon: 'person', name: '管理'}
+                    {to: '/app/home', icon: 'ion-ios-home', name: '首页'},
+                    {to: '/app/file', icon: 'ion-ios-paper', name: '归档'},
+                    {to: '/app/works', icon: 'ion-ios-camera', name: '作品'},
+                    {to: '/app/navigation', icon: 'ion-ios-navigate', name: '导航'},
+                    {to: '/server', icon: 'ion-person', name: '管理'}
 //                    {to: '/app/email', icon: 'ios-email', name: '留言'}
                 ],
                 tags: []
@@ -101,8 +101,10 @@
     .side-bar .nav .icon{
         float: left;
         margin-right: 10px;
+        font-size: 25px;
+        color: #39f;
     }
-    .side-bar .nav .icon-right{
+    .side-bar .nav .ion-right{
         float: right;
         margin-right: 0;
         margin-left: 10px;

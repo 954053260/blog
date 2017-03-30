@@ -17,10 +17,10 @@
                 </label>
             </p>
             <p>
-                <Button type="primary" :loading="loading" @click="submitComment()">
+                <button class="submit" @click="submitComment()">
                     <span v-if="!loading">提交评论</span>
                     <span v-else>Loading...</span>
-                </Button>
+                </button>
             </p>
         </div>
     </div>
@@ -61,11 +61,11 @@
                             param: this.param
                         });
                     } else {
-                        this.$Message.error(data.msg);
+                        this.$toast.info(data.msg);
                     }
                 },(err) => {
                     this.loading = false;
-                    this.$Message.error(err.msg);
+                    this.$toast.info(err.msg);
                 });
             }
         }
@@ -93,13 +93,16 @@
         border: 1px solid #39f;
     }
     .comment-form .submit{
-        width: 100px;
-        height: 36px;
-        background-color: #f0f3f9;
-        color: #333;
-        overflow: visible;
+        display: inline-block;
+        color: #fff;
+        background-color: #39f;
         cursor: pointer;
-        box-shadow: 1px 1px #AFC4EA, 2px 2px #AFC4EA, 3px 3px #AFC4EA;
-        font-size: 14px;
+        user-select: none;
+        padding: 6px 15px;
+        font-size: 12px;
+        border-radius: 4px;
+        border: 1px solid #39f;
+        white-space: nowrap;
+        line-height: 1.5;
     }
 </style>

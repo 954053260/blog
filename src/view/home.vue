@@ -16,12 +16,8 @@
       </li>
     </ul>
     <div class="page-btn">
-      <Button v-show="pageIndex" type="info" :loading="isLoading" @click="prePage()">
-        <span>上一页</span>
-      </Button>
-      <Button v-show="isLastPage" type="info" :loading="isLoading" @click="lastPage()">
-        <span>下一页</span>
-      </Button>
+      <button v-show="pageIndex" @click="prePage()">上一页</button>
+      <button v-show="isLastPage" @click="lastPage()">下一页</button>
     </div>
   </div>
 </template>
@@ -78,10 +74,10 @@
               this.article.isHasData = data.data.isHasData;
             }
           } else {
-            this.$Message.error(data.msg);
+            this.$toast.info(data.msg);
           }
         },(err) => {
-          this.$Message.error(err.msg);
+          this.$toast.info(err.msg);
         });
       },
       prePage: function () {
@@ -120,19 +116,21 @@
     border-bottom: none;
   }
   .post-title{
+    padding-bottom: 5px;
     font-size: 16px;
     color: #2c3e50;
   }
   .post-title-link{
-    padding-bottom: 6px;
+
+  }
+  .post-info{
+    padding-bottom: 5px;
+    color: #999;
   }
   .post-tag{
     display: inline-block;
     margin-left: 5px;
     color: #39f;
-  }
-  .post-from{
-    color: #E36B6B;
   }
   .post-content{
     line-height: 1.7;
@@ -154,5 +152,16 @@
   }
   .page-btn > button{
     margin: 0 10px;
+    display: inline-block;
+    color: #fff;
+    background-color: #39f;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #39f;
+    white-space: nowrap;
+    line-height: 1.5;
   }
 </style>

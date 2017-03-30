@@ -1,11 +1,11 @@
 <template>
-  <div id="sHome">
+  <div id="server">
     <h2 class="title">后端管理系统</h2>
   </div>
 </template>
 <script type="text/ecmascript-6">
   export default {
-    name:'sHome',
+    name:'server',
     created: function () {
 
     },

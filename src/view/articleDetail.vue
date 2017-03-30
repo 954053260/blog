@@ -66,10 +66,10 @@
                     if (data.status == 0) {
                         this.detail = data.data.detail;
                     } else {
-                        this.$Message.error(data.msg);
+                        this.$toast.info(data.msg);
                     }
                 },(err) => {
-                    this.$Message.error(err.msg);
+                    this.$toast.info(err.msg);
                 });
             },
             /**
@@ -102,11 +102,11 @@
                             this.commentList[index].reply.list = data.data.list;
                         }
                     } else {
-                        this.$Message.error(data.msg);
+                        this.$toast.info(data.msg);
                     }
                 },(err) => {
                     if (type == 2) this.commentList[index].reply.isLoading = false;
-                    this.$Message.error(err.msg);
+                    this.$toast.info(err.msg);
                 });
             },
             reply: function (index) {
