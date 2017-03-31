@@ -10,10 +10,10 @@
       return {
 
       }
-  },
-  methods: {
+    },
+    methods: {
 
-  }
+    }
   }
 </script>
 

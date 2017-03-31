@@ -29,12 +29,20 @@
       return {
         navList: [
           {
-            name: 'minimal虾米博客',
-            href: 'http://www.cnblogs.com/xt911129/'
+            name: 'css参考文档',
+            href: 'http://www.css88.com/book/css/'
           },
           {
-            name: '阮一峰的网络日志',
-            href: 'http://www.ruanyifeng.com/blog/'
+            name: 'jquery参考文档',
+            href: 'http://www.css88.com/jqapi-1.9/'
+          },
+          {
+            name: 'ES6入门教程-阮一峰',
+            href: 'http://es6.ruanyifeng.com/'
+          },
+          {
+            name: 'weex官方文档',
+            href: 'https://weex-project.io/references/components/indicator.html'
           }
         ]
       }
