@@ -3,4 +3,6 @@
  */
 import Vue from 'vue'
 import toast from './toast'
+import barrage from './barrage'
 Vue.use(toast);
+Vue.use(barrage);

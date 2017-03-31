@@ -20,10 +20,10 @@ new Vue({
   router,
   store,
   created: function () {
-    var i = 0;
-    setInterval(function () {
-      Vue.toast.info('一条信息对方水电费三顿饭！！！' + (i++));
-    },5000);
+    //var barrage = ['66666666','文章写的很赞','弹幕压制','弹幕弹幕弹幕弹幕弹幕','弹弹弹弹','幕幕幕幕','11111111','22222222','333333333','233333','============']
+    //setInterval(function () {
+    //  Vue.barrage.info({info: barrage[parseInt(Math.random()*10)]});
+    //},100);
   },
   mounted: function () {
 

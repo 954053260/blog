@@ -151,6 +151,19 @@ input,textarea{
     animation-play-state: running;
     animation-timing-function: ease-in-out
 }
+.barrage-content{
+
+}
+.barrage-item{
+    position: fixed;
+    z-index: 999;
+    display: block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition-property: all;
+    transition-timing-function: linear;
+}
 @keyframes moveUpIn {
     0% {
         transform-origin: 0 0;
