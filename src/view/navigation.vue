@@ -42,7 +42,7 @@
           },
           {
             name: 'weex官方文档',
-            href: 'https://weex-project.io/references/components/indicator.html'
+            href: 'https://weex-project.io/cn/'
           }
         ]
       }
