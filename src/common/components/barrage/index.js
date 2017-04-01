@@ -22,7 +22,7 @@ export default {
                 info: option.info || '', //文字
                 speed: option.speed || 8, //延迟,单位秒,默认8
                 top: option.top || Math.random()*(clientHeight - 35), //距离底部高度,单位px,默认随机
-                color: option.color || colors[parseInt(Math.random()*6)], //颜色,默认白色
+                color: option.color || colors[parseInt(Math.random()*colors.length)], //颜色,默认白色
                 bg: option.bg || 'rgba(0, 0, 0, 0.7)' //ie低版兼容色,不能与网页背景相同,默认黑色
             };
             var itemNode = document.createElement('div');
