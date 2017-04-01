@@ -1,20 +1,22 @@
 <template>
   <div id="home">
-    <ul class="post-list">
-      <li class="post-list-item" v-for="item in article.data[pageIndex]">
-        <article class="post-block">
-          <h2 class="post-title">
-            <a class="post-title-link">{{item.title}}</a>
-          </h2>
-          <div class="post-info">{{item.date | date('yyyy-MM-dd')}}
-            <a v-for="tag in item.tags" :title="tag.name" class="post-tag">#{{tag.name}}</a>
-          </div>
-          <div class="post-content">{{item.desc}}
-            <router-link :to="'/app/articleDetail?id='+ item.id" title="阅读全文" class="read-more">[阅读全文]</router-link>
-          </div>
-        </article>
-      </li>
-    </ul>
+    <div class="post-list">
+      <transition-group name="fade" tag="div">
+        <div class="post-list-item" v-for="(item, index) in article.data[pageIndex]" :key="index">
+          <article class="post-block">
+            <h2 class="post-title">
+              <a class="post-title-link">{{item.title}}</a>
+            </h2>
+            <div class="post-info">{{item.date | date('yyyy-MM-dd')}}
+              <a v-for="tag in item.tags" :title="tag.name" class="post-tag">#{{tag.name}}</a>
+            </div>
+            <div class="post-content">{{item.desc}}
+              <router-link :to="'/app/articleDetail?id='+ item.id" title="阅读全文" class="read-more">[阅读全文]</router-link>
+            </div>
+          </article>
+        </div>
+      </transition-group>
+    </div>
     <div class="page-btn">
       <button v-show="pageIndex" @click="prePage()">上一页</button>
       <button v-show="isLastPage" @click="lastPage()">下一页</button>

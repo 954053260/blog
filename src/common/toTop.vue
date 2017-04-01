@@ -5,37 +5,20 @@
         </a>
     </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
     export default {
         name:'toTop',
         created: function () {
 
         },
+        props: ['el'],
         methods: {
-            _getScrollValue: function () {
-                var scrollTop,scrollLeft;
-                if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离
-                    scrollLeft = window.pageXOffset;
-                    scrollTop = window.pageYOffset;
-                }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
-                    scrollLeft = document.documentElement.scrollLeft;
-                    scrollTop = document.documentElement.scrollTop;
-                }else if(typeof document.body != 'undefined'){
-                    scrollLeft = document.body.scrollLeft;
-                    scrollTop = document.body.scrollTop;
-                }
-                return {top:scrollTop,left:scrollLeft};
-            },
             toTop: function () {
-                var scrollTop = this._getScrollValue().top;
-                var scrollLeft = this._getScrollValue().left;
-                var timer = setInterval(function () {
-                    scrollTop -= 100;
-                    scroll(scrollLeft,scrollTop);
-                    if(scrollTop <= 0){
+                var timer = setInterval (() => {
+                    if ((this.$parent.$refs.wrap.scrollTop -= 100) <= 0) {
                         clearInterval(timer);
-                    }
-                },0);
+                    };
+                },0)
             }
         },
         data: function () {

@@ -1,3 +1,15 @@
+/*custom scrollbar*/
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(51, 153, 255, 0);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #999;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +20,7 @@ body{
     height: 100%
 }
 body{
-    overflow-y: scroll;
+    overflow: hidden;
 }
 ul{
     list-style-type: none;
@@ -45,25 +57,7 @@ input,textarea{
 .p0-20{
     padding: 0 20px;
 }
-.wrap{
-    position: relative;
-    margin-left: 300px;
-    background: #fff;
-}
-.content{
-    max-width: 800px;
-    margin: auto;
-}
-.footer{
-    margin-top: 16px;
-    padding: 35px 0;
-    height: 30px;
-    line-height: 30px;
-    color: #999;
-    font-size: 14px;
-    text-align: center;
-    border-top: 1px solid #ccc;
-}
+
 /*清除浮动*/
 .clear-float {
     zoom:1;
@@ -139,7 +133,7 @@ input,textarea{
     color: #39f;
     font-size: 14px;
 }
-/*animate*/
+/*transition-toast*/
 .toast-enter-active {
     animation-duration: .3s;
     animation-name: moveUpIn
@@ -176,7 +170,6 @@ input,textarea{
         opacity: 1
     }
 }
-
 @keyframes moveUpOut {
     0% {
         transform-origin: 0 0;
@@ -189,4 +182,11 @@ input,textarea{
         transform: translateY(-100%);
         opacity: 0
     }
+}
+/*transition-fade*/
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .3s
+}
+.fade-enter, .fade-leave-to{
+    opacity: 0
 }

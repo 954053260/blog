@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <side-bar></side-bar>
-    <div ref="wrap" class="wrap">
+    <div ref="wrap" class="wrap" :style="{ minWidth: minWidth + 'px'}">
       <a class="nav-icon" @click="toggleSide()">
         <i class="icon ion-navicon-round"></i>
       </a>
@@ -23,8 +23,10 @@
   export default {
     name:'app',
     created: function () {
+      var w = document.body.clientWidth;
       var h = document.body.clientHeight;
       this.minHeight = h - 118 - 117;
+      this.minWidth = w > 510 ? 510 : w;
     },
     mounted: function () {
       this.isRender = true;
@@ -34,29 +36,53 @@
       return {
         isRender: false,
         isToggleSide: true,
-        minHeight: 0
+        minHeight: 0,
+        minWidth: 0
       }
     },
     methods: {
       toggleSide: function () {
         this.isToggleSide = !this.isToggleSide;
-        this.$refs.wrap.style.marginLeft = this.isToggleSide ? '300px' : 0;
+        this.$refs.wrap.style.left = this.isToggleSide ? '300px' : 0;
       }
     }
   }
 </script>
 <style scoped>
   .wrap{
-    transition: margin .3s;
-    -moz-transition: margin .3s;	/* Firefox 4 */
-    -webkit-transition: margin .3s;	/* Safari 和 Chrome */
-    -o-transition: margin .3s;	/* Opera */
+    position: absolute;
+    left: 300px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #fff;
+    transition: left .3s;
+    -moz-transition: left .3s;	/* Firefox 4 */
+    -webkit-transition: left .3s;	/* Safari 和 Chrome */
+    -o-transition: left .3s;	/* Opera */
   }
   .nav-icon{
     position: absolute;
     left: 10px;
     font-size: 25px;
     color: #39f;
+  }
+  .content{
+    max-width: 800px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  .footer{
+    margin-top: 16px;
+    padding: 35px 0;
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid #ccc;
   }
 </style>
 

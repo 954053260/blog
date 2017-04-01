@@ -41,8 +41,16 @@
             href: 'http://es6.ruanyifeng.com/'
           },
           {
+            name: 'vue官方文档',
+            href: 'https://vuefe.cn/v2/api/'
+          },
+          {
             name: 'weex官方文档',
             href: 'https://weex-project.io/cn/'
+          },
+          {
+            name: 'Flexible移动终极适配',
+            href: 'https://github.com/amfe/lib-flexible'
           }
         ]
       }

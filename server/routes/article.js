@@ -35,6 +35,8 @@ router.get('/arrange', function(req, res) {
                     data.push({date: new Date (nowYear,nowMonth),list: [item]});
                 }
             });
+            //判断第一个数据列表是否为空
+            if (data[0].list.length == 0) data.shift();
             res.send({
                 status: 0,
                 data: data
