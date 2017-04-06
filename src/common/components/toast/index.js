@@ -22,7 +22,8 @@ export default {
         };
 
         toast.remove = function () {
-            clearTimeout(this.messages.shift().timer);
+            var message = this.messages.shift();
+            clearTimeout(message && message.timer);
         };
     }
 }
