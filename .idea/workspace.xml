@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb67f8a9-bba1-41a3-a44e-1259018f9792" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/components/toast/index.js" afterPath="$PROJECT_DIR$/src/common/components/toast/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/logo1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/logo.png" afterPath="$PROJECT_DIR$/src/assets/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/header.vue" afterPath="$PROJECT_DIR$/src/common/header.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/server/server.vue" afterPath="$PROJECT_DIR$/src/view/server/server.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blog.iws" />
@@ -59,8 +63,18 @@
       <file leaf-file-name="sideBar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/common/sideBar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.181818">
-              <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+            <state vertical-scroll-proportion="-1.4545455">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/common/header.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59001315">
+              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -69,18 +83,8 @@
       <file leaf-file-name="server.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/server/server.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.727273">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/common/components/toast/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8161209">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.424242">
+              <caret line="51" column="17" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -113,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="179" column="23" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
+              <caret line="156" column="15" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="15" />
               <folding>
                 <element signature="e#943#1015#0" expanded="false" />
                 <element signature="e#1029#1052#0" expanded="false" />
@@ -162,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/view/server/sHome.html" />
         <option value="$PROJECT_DIR$/src/view/server/sHome.vue" />
         <option value="$PROJECT_DIR$/src/router.js" />
-        <option value="$PROJECT_DIR$/src/common/header.vue" />
         <option value="$PROJECT_DIR$/src/common/commentForm.vue" />
         <option value="$PROJECT_DIR$/src/view/articleDetail.vue" />
         <option value="$PROJECT_DIR$/src/common/components/toast/notice.vue" />
@@ -191,8 +194,9 @@
         <option value="$PROJECT_DIR$/server/bin/www" />
         <option value="$PROJECT_DIR$/src/common/floatMenu.vue" />
         <option value="$PROJECT_DIR$/src/common/sideBar.vue" />
-        <option value="$PROJECT_DIR$/src/view/server/server.vue" />
         <option value="$PROJECT_DIR$/src/common/components/toast/index.js" />
+        <option value="$PROJECT_DIR$/src/view/server/server.vue" />
+        <option value="$PROJECT_DIR$/src/common/header.vue" />
       </list>
     </option>
   </component>
@@ -323,6 +327,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -342,11 +364,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hyt\Desktop\blog\src\assets" />
       <recent name="C:\Users\hyt\Desktop\blog\src\lib" />
       <recent name="C:\Users\hyt\Desktop\blog\server\views" />
       <recent name="C:\Users\hyt\Desktop\blog\src\common\components\dialog" />
       <recent name="C:\Users\hyt\Desktop\blog\src\common\components\barrage" />
-      <recent name="C:\Users\hyt\Desktop\blog\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hyt\Desktop\blog\server\public" />
@@ -556,7 +578,13 @@
       <option name="project" value="LOCAL" />
       <updated>1491464255039</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="修复toast组件 remove报错问题">
+      <created>1491466983288</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1491466983288</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -609,7 +637,9 @@
     <MESSAGE value="优化部分页面UI" />
     <MESSAGE value="添加对话框插件" />
     <MESSAGE value="提交聊天模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交聊天模块" />
+    <MESSAGE value="修复toast组件 remove报错问题" />
+    <MESSAGE value="修改头部样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改头部样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.636364">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -848,21 +871,6 @@
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#2007#2058#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="179" column="23" selection-start-line="179" selection-start-column="23" selection-end-line="179" selection-end-column="23" />
-          <folding>
-            <element signature="e#943#1015#0" expanded="false" />
-            <element signature="e#1029#1052#0" expanded="false" />
-            <element signature="e#1072#1179#0" expanded="false" />
-            <element signature="e#1187#2031#0" expanded="false" />
-            <element signature="e#3921#4148#0" expanded="false" />
-            <element signature="e#4149#4378#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -998,26 +1006,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/components/toast/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3324937">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="156" column="15" selection-start-line="156" selection-start-column="12" selection-end-line="156" selection-end-column="15" />
+          <folding>
+            <element signature="e#943#1015#0" expanded="false" />
+            <element signature="e#1029#1052#0" expanded="false" />
+            <element signature="e#1072#1179#0" expanded="false" />
+            <element signature="e#1187#2031#0" expanded="false" />
+            <element signature="e#3921#4148#0" expanded="false" />
+            <element signature="e#4149#4378#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/sideBar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.181818">
-          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        <state vertical-scroll-proportion="-1.4545455">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/server/server.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.727273">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state vertical-scroll-proportion="-11.424242">
+          <caret line="51" column="17" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/components/toast/index.js">
+    <entry file="file://$PROJECT_DIR$/src/common/header.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8161209">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.59001315">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding />
         </state>
       </provider>
