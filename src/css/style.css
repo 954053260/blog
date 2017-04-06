@@ -181,6 +181,7 @@ input,textarea{
     white-space: nowrap;
     transition-property: all;
     transition-timing-function: linear;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
 }
 .confirm{
     position: relative;
@@ -245,4 +246,10 @@ input,textarea{
 }
 .fade-enter, .fade-leave-to{
     opacity: 0
+}
+.slide-bottom-enter-active, .slide-bottom-leave-active {
+    transition: transform .3s
+}
+.slide-bottom-enter, .slide-bottom-leave-to{
+    transform: translate3d(0, 100%, 0);
 }

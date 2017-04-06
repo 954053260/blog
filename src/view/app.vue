@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <side-bar></side-bar>
+    <float-menu></float-menu>
     <div ref="wrap" class="wrap" :style="{ minWidth: minWidth + 'px'}">
       <a class="nav-icon" @click="toggleSide()">
         <i class="icon ion-navicon-round"></i>
@@ -10,7 +11,6 @@
         <router-view :style="{ minHeight: minHeight + 'px' ,position: 'relative'}"></router-view>
         <footer v-show="isRender" class="footer" style="display: none">
           <p>blog制作中@小唐</p>
-          <to-top></to-top>
         </footer>
       </div>
     </div>
@@ -18,7 +18,7 @@
 </template>
 <script>
   import header from '../common/header.vue'
-  import toTop from '../common/toTop.vue'
+  import floatMenu from '../common/floatMenu.vue'
   import sideBar from '../common/sideBar.vue'
   export default {
     name:'app',
@@ -31,7 +31,7 @@
     mounted: function () {
       this.isRender = true;
     },
-    components: {'vHeader': header, 'toTop': toTop, 'sideBar': sideBar},
+    components: {'vHeader': header, 'floatMenu': floatMenu, 'sideBar': sideBar},
     data: function () {
       return {
         isRender: false,

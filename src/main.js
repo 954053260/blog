@@ -2,6 +2,7 @@
 import './css/ionicons.min.css'
 import './css/style.css'
 import './css/github-markdown.css'
+import './directive.js'
 import './common/components'
 import Vue from 'vue'
 import router from './router.js'
@@ -9,6 +10,8 @@ import store from './store'
 import filter from './filter.js'
 import app from './view/app.vue'
 import ajax from './ajax.js'
+import socket from './socket.js'
+Vue.use(socket);
 //import iView from 'iview';
 //Vue.use(iView);
 Vue.use(ajax, {
@@ -20,6 +23,9 @@ new Vue({
   router,
   store,
   created: function () {
+    this.$socket.on('chat', (data) => {
+      this.$barrage.info({info: data.text});
+    });
     //setTimeout(function () {
     //  Vue.dialog.confirm({
     //    content: '弹出一个对话框！',

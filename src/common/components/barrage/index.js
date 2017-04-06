@@ -4,7 +4,7 @@
 export default {
     install: function (Vue, option) {
         let barrage,
-            colors = ['#FFF','#00BFFF','#8A2BE2','#FF1493','#B22222','#FFC107','#FFD700'],
+            colors = ['#000','#00BFFF','#8A2BE2','#FF1493','#FF0000','#FF9800'],
             barrageNode = document.createElement('div'),
             clientWidth = document.body.clientWidth,
             clientHeight = document.body.clientHeight;
@@ -23,7 +23,7 @@ export default {
                 speed: option.speed || 8, //延迟,单位秒,默认8
                 top: option.top || Math.random()*(clientHeight - 35), //距离底部高度,单位px,默认随机
                 color: option.color || colors[parseInt(Math.random()*colors.length)], //颜色,默认白色
-                bg: option.bg || 'rgba(0, 0, 0, 0.7)' //ie低版兼容色,不能与网页背景相同,默认黑色
+                bg: option.bg || 'rgba(255, 255, 255, 0.8)' //ie低版兼容色,不能与网页背景相同,默认黑色
             };
             var itemNode = document.createElement('div');
             itemNode.className = 'barrage-item';
@@ -31,7 +31,7 @@ export default {
             barrageNode.appendChild(itemNode);
             itemNode.style.color = option.color;
             itemNode.style.background = option.bg;
-            itemNode.style.left = clientWidth + itemNode.offsetWidth + 'px';
+            itemNode.style.left = clientWidth + 'px';
             itemNode.style.top = option.top + 'px';
             itemNode.style.transitionDuration = itemNode.style.webkitTransitionDuration = option.speed + 's';
             setTimeout(function () {
