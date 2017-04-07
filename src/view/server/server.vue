@@ -121,6 +121,7 @@
         display: block;
         line-height: 25px;
         padding: 8px 16px;
+        border-bottom: 1px solid #104E8B;
     }
     .server-nav-item.active{
         background: #104E8B;

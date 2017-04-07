@@ -226,6 +226,9 @@ router.get('/comment', function (req, res) {
  * @param text:'',author:'',email:'',refId:'',articleId:''
  */
 router.post('/submitComment', function (req, res) {
+    if (!req.body.text && !req.body.author) {
+        return res.send({status: 5,msg: '参数错误'});
+    }
     var comment = new Comment(req.body),
         sql = 'INSERT INTO comment (text, date, author, email, ref_id, article_id) VALUES (' +
             db.pool.escape(comment.text) + ',' + db.pool.escape(comment.date) + ',' + db.pool.escape(comment.author) +
