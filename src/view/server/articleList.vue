@@ -1,7 +1,7 @@
 <template>
     <div id="articleList">
         <h2 class="title">文章列表</h2>
-        <p v-if="!isLoad" class="loading">加载...</p>
+        <p v-if="!isLoad" class="loading mt10 tc">加载...</p>
         <ul v-if="isLoad" class="article-table">
             <li class="row">
                 <b class="col">标题</b>

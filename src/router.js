@@ -13,6 +13,7 @@ import articleDetail from './view/articleDetail.vue'
 import server from './view/server/server.vue'
 import articleWrite from './view/server/articleWrite.vue'
 import articleList from './view/server/articleList.vue'
+import tagAdd from './view/server/tagAdd.vue'
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: 'history',
@@ -31,7 +32,8 @@ const router = new VueRouter({
         { path: '/server/', component: server,
             children: [
                 { path: 'write', component: articleWrite},
-                { path: 'list', component: articleList}
+                { path: 'list', component: articleList},
+                { path: 'addTag', component: tagAdd}
             ]
         }
     ]

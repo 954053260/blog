@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb67f8a9-bba1-41a3-a44e-1259018f9792" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/server/articleList.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/server/articleWrite.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/common/checkbox.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/server/tagAdd.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/model/Article.js" afterPath="$PROJECT_DIR$/server/model/Article.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/model/Comment.js" afterPath="$PROJECT_DIR$/server/model/Comment.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes/article.js" afterPath="$PROJECT_DIR$/server/routes/article.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/file.vue" afterPath="$PROJECT_DIR$/src/view/file.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/server/articleList.vue" afterPath="$PROJECT_DIR$/src/view/server/articleList.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/server/articleWrite.vue" afterPath="$PROJECT_DIR$/src/view/server/articleWrite.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router.js" afterPath="$PROJECT_DIR$/src/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/server/server.vue" afterPath="$PROJECT_DIR$/src/view/server/server.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/sideBar.vue" afterPath="$PROJECT_DIR$/src/common/sideBar.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/css/style.css" afterPath="$PROJECT_DIR$/src/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,8 +34,8 @@
       <file leaf-file-name="server.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/server/server.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.636364">
-              <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+            <state vertical-scroll-proportion="-34.909092">
+              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -50,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/server/routes/article.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="127" column="38" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
+              <caret line="156" column="42" selection-start-line="156" selection-start-column="42" selection-end-line="156" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -66,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Article.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/model/Article.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.60453403">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -80,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+              <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -89,8 +84,8 @@
       <file leaf-file-name="articleList.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/server/articleList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.515152">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state vertical-scroll-proportion="-1.0588236">
+              <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -106,11 +101,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="articleWrite.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="articleWrite.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/server/articleWrite.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.1445467">
-              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+            <state vertical-scroll-proportion="-8.0">
+              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tagAdd.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/server/tagAdd.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.4545455">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -120,23 +125,23 @@
         <entry file="file://$PROJECT_DIR$/src/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="6" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="6" />
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="5" />
               <folding>
-                <element signature="e#1023#1095#0" expanded="false" />
-                <element signature="e#1109#1132#0" expanded="false" />
-                <element signature="e#1152#1259#0" expanded="false" />
-                <element signature="e#1267#2111#0" expanded="false" />
-                <element signature="e#2120#2161#0" expanded="false" />
-                <element signature="e#2166#2263#0" expanded="false" />
-                <element signature="e#2276#2351#0" expanded="false" />
-                <element signature="e#2358#2433#0" expanded="false" />
-                <element signature="e#2440#2515#0" expanded="false" />
-                <element signature="e#2522#2597#0" expanded="false" />
-                <element signature="e#2604#2679#0" expanded="false" />
-                <element signature="e#2686#2761#0" expanded="false" />
-                <element signature="e#2772#2850#0" expanded="false" />
-                <element signature="e#4740#4967#0" expanded="false" />
-                <element signature="e#4968#5197#0" expanded="false" />
+                <element signature="e#1054#1126#0" expanded="false" />
+                <element signature="e#1140#1163#0" expanded="false" />
+                <element signature="e#1183#1290#0" expanded="false" />
+                <element signature="e#1298#2142#0" expanded="false" />
+                <element signature="e#2151#2192#0" expanded="false" />
+                <element signature="e#2197#2294#0" expanded="false" />
+                <element signature="e#2307#2382#0" expanded="false" />
+                <element signature="e#2389#2464#0" expanded="false" />
+                <element signature="e#2471#2546#0" expanded="false" />
+                <element signature="e#2553#2628#0" expanded="false" />
+                <element signature="e#2635#2710#0" expanded="false" />
+                <element signature="e#2717#2792#0" expanded="false" />
+                <element signature="e#2803#2881#0" expanded="false" />
+                <element signature="e#4771#4998#0" expanded="false" />
+                <element signature="e#4999#5228#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -158,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/check.js" />
         <option value="$PROJECT_DIR$/models/article.js" />
         <option value="$PROJECT_DIR$/models/message.js" />
@@ -199,16 +203,17 @@
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/common/checkbox.vue" />
         <option value="$PROJECT_DIR$/src/view/server/writeArticle.vue" />
-        <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/common/floatMenu.vue" />
         <option value="$PROJECT_DIR$/src/view/file.vue" />
+        <option value="$PROJECT_DIR$/server/model/Comment.js" />
+        <option value="$PROJECT_DIR$/src/view/server/tagAdd.vue" />
+        <option value="$PROJECT_DIR$/src/router.js" />
         <option value="$PROJECT_DIR$/src/view/server/server.vue" />
         <option value="$PROJECT_DIR$/src/css/style.css" />
         <option value="$PROJECT_DIR$/src/view/server/articleList.vue" />
-        <option value="$PROJECT_DIR$/server/model/Comment.js" />
-        <option value="$PROJECT_DIR$/server/model/Article.js" />
         <option value="$PROJECT_DIR$/server/routes/article.js" />
         <option value="$PROJECT_DIR$/src/view/server/articleWrite.vue" />
+        <option value="$PROJECT_DIR$/server/model/Article.js" />
       </list>
     </option>
   </component>
@@ -602,7 +607,13 @@
       <option name="project" value="LOCAL" />
       <updated>1491471307801</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="添加后台管理系统 发布文章 文章列表功能">
+      <created>1491553441442</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1491553441442</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -611,6 +622,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293461" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.5063796" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -619,7 +631,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32971016" sideWeight="0.49362043" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -657,7 +668,8 @@
     <MESSAGE value="提交聊天模块" />
     <MESSAGE value="修复toast组件 remove报错问题" />
     <MESSAGE value="修改头部样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改头部样式" />
+    <MESSAGE value="添加后台管理系统 发布文章 文章列表功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加后台管理系统 发布文章 文章列表功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -666,13 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blog.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/commentForm.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -866,6 +871,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="5144" column="17" selection-start-line="5144" selection-start-column="14" selection-end-line="5144" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -970,38 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="6" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="6" />
-          <folding>
-            <element signature="e#1023#1095#0" expanded="false" />
-            <element signature="e#1109#1132#0" expanded="false" />
-            <element signature="e#1152#1259#0" expanded="false" />
-            <element signature="e#1267#2111#0" expanded="false" />
-            <element signature="e#2120#2161#0" expanded="false" />
-            <element signature="e#2166#2263#0" expanded="false" />
-            <element signature="e#2276#2351#0" expanded="false" />
-            <element signature="e#2358#2433#0" expanded="false" />
-            <element signature="e#2440#2515#0" expanded="false" />
-            <element signature="e#2522#2597#0" expanded="false" />
-            <element signature="e#2604#2679#0" expanded="false" />
-            <element signature="e#2686#2761#0" expanded="false" />
-            <element signature="e#2772#2850#0" expanded="false" />
-            <element signature="e#4740#4967#0" expanded="false" />
-            <element signature="e#4968#5197#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/server/server.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.636364">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/common/floatMenu.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.909091">
@@ -1026,14 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/server/articleList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.515152">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/postcss-minify-selectors/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324937">
@@ -1042,18 +1008,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router.js">
+    <entry file="file://$PROJECT_DIR$/src/view/server/tagAdd.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state vertical-scroll-proportion="-1.4545455">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/model/Article.js">
+    <entry file="file://$PROJECT_DIR$/src/view/server/server.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.909092">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="e#1054#1126#0" expanded="false" />
+            <element signature="e#1140#1163#0" expanded="false" />
+            <element signature="e#1183#1290#0" expanded="false" />
+            <element signature="e#1298#2142#0" expanded="false" />
+            <element signature="e#2151#2192#0" expanded="false" />
+            <element signature="e#2197#2294#0" expanded="false" />
+            <element signature="e#2307#2382#0" expanded="false" />
+            <element signature="e#2389#2464#0" expanded="false" />
+            <element signature="e#2471#2546#0" expanded="false" />
+            <element signature="e#2553#2628#0" expanded="false" />
+            <element signature="e#2635#2710#0" expanded="false" />
+            <element signature="e#2717#2792#0" expanded="false" />
+            <element signature="e#2803#2881#0" expanded="false" />
+            <element signature="e#4771#4998#0" expanded="false" />
+            <element signature="e#4999#5228#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/server/articleList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0588236">
+          <caret line="3" column="48" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/server/articleWrite.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.0">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1061,15 +1075,15 @@
     <entry file="file://$PROJECT_DIR$/server/routes/article.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="127" column="38" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
+          <caret line="156" column="42" selection-start-line="156" selection-start-column="42" selection-end-line="156" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/server/articleWrite.vue">
+    <entry file="file://$PROJECT_DIR$/server/model/Article.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1445467">
-          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.60453403">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>

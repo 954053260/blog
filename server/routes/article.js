@@ -122,6 +122,9 @@ router.post('/save', function (req, res) {
     if (!req.body.tag) {
         req.body.tag = '0';
     }
+    if (!req.body.title && !req.body.detail) {
+        return res.send({status: 5,msg: '参数错误'});
+    }
     var article = new Article(req.body),
         sql = 'INSERT INTO article (title, date, article.desc, detail, author) VALUES (' +
             db.pool.escape(article.title) + ',' + db.pool.escape(article.date) +
@@ -133,21 +136,32 @@ router.post('/save', function (req, res) {
             res.send({status: 6,msg: '保存文章错误'});
             return;
         }
+        var aId = row.insertId;
         tags.forEach(function (item,i) {
             if (item) {
                 var sql = 'INSERT INTO article_to_tag (a_id, t_id) VALUES (' + db.pool.escape(row.insertId) + ','
                     + db.pool.escape(item) + ')';
+                /*添加标签与文章关联表数据项*/
                 db.query(sql,function (err, row) {
                     if (err) {
-                        res.send({status: 6,msg: '保存文章关联标签错误'});
+                        return res.send({status: 6, msg: '保存文章关联标签错误'});
                     }
-                    if (i == (tags.length - 1)) {
-                        res.send({
-                            status: 0,
-                            data: {id: row.insertId}
-                        });
-                    }
+                    var sql = 'UPDATE tag SET number = (SELECT COUNT(*) FROM article_to_tag WHERE t_id = '+
+                        db.pool.escape(item) + ')' + ' WHERE id=' + db.pool.escape(item);
+                    db.query(sql,function (err, row) {
+                        if (err) {
+                            return res.send({status: 6, msg: '更新标签项数据错误'});
+                        }
+                        if (i == (tags.length - 1)) {
+                            res.send({
+                                status: 0,
+                                data: {id: aId}
+                            });
+                        }
+                    });
+                    /*更新标签项数据*/
                 });
+
             }
         });
     });

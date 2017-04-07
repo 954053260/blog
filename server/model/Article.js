@@ -11,12 +11,11 @@ function Article (article) {
     this.title = article.title;
     this.date = article.date || new Date();
     this.detail = article.detail;
-    this.author = article.author;
+    this.author = article.author || '无名';
     if (article.desc) {
         this.desc = article.desc;
     } else {
-        this.desc = filterHTML(article.detail || '').substr(0,200);
+        this.desc = filterHTML(article.detail || '').substr(0,100);
     }
 }
-
 module.exports = Article;

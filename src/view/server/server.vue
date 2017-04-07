@@ -38,12 +38,17 @@
                     {
                         icon: 'ion-edit',
                         to: '/server/write',
-                        title: '写文章'
+                        title: '发布文章'
                     },
                     {
                         icon: 'ion-ios-list',
                         to: '/server/list',
                         title: '文章列表'
+                    },
+                    {
+                        icon: 'ion-ios-pricetags',
+                        to: '/server/addTag',
+                        title: '添加标签'
                     }
                 ],
                 navIndex: 0
@@ -60,6 +65,9 @@
                         break;
                     case '/server/list':
                         this.navIndex = 1;
+                        break;
+                    case '/server/addTag':
+                        this.navIndex = 2;
                         break;
                 }
             }

@@ -1,6 +1,6 @@
 <template>
     <div id="articleWrite">
-        <h2 class="title">写文章</h2>
+        <h2 class="title">发布文章</h2>
         <div class="write-content">
             <p>作者:</p>
             <label class="input-title">
@@ -33,6 +33,7 @@
         created: function () {
             this.$http.get('article/tags',{}).then((data) => {
                 if (data.status == 0) {
+                    data.data.list.shift();
                     data.data.list.forEach(function (item) {
                         item.checked = false;
                     });
