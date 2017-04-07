@@ -47,7 +47,7 @@
                     {to: '/app/file', icon: 'ion-ios-paper', name: '归档'},
                     {to: '/app/works', icon: 'ion-ios-camera', name: '作品'},
                     {to: '/app/navigation', icon: 'ion-ios-navigate', name: '导航'},
-                    {to: '/server', icon: 'ion-person', name: '管理'}
+                    {to: '/server/write', icon: 'ion-person', name: '管理'}
 //                    {to: '/app/email', icon: 'ios-email', name: '留言'}
                 ],
                 tags: []

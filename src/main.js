@@ -5,12 +5,14 @@ import './css/github-markdown.css'
 import './directive.js'
 import './common/components'
 import Vue from 'vue'
+import checkbox from './common/checkbox.vue'
 import router from './router.js'
 import store from './store'
 import filter from './filter.js'
 import app from './view/app.vue'
 import ajax from './ajax.js'
 import socket from './socket.js'
+Vue.component('checkbox', checkbox);
 Vue.use(socket);
 //import iView from 'iview';
 //Vue.use(iView);

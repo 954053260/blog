@@ -11,6 +11,8 @@ import file from './view/file.vue'
 import email from './view/email.vue'
 import articleDetail from './view/articleDetail.vue'
 import server from './view/server/server.vue'
+import articleWrite from './view/server/articleWrite.vue'
+import articleList from './view/server/articleList.vue'
 Vue.use(VueRouter);
 const router = new VueRouter({
     mode: 'history',
@@ -26,9 +28,10 @@ const router = new VueRouter({
                 { path: 'articleDetail', component: articleDetail}
             ]
         },
-        { path: '/server', component: server,
+        { path: '/server/', component: server,
             children: [
-
+                { path: 'write', component: articleWrite},
+                { path: 'list', component: articleList}
             ]
         }
     ]

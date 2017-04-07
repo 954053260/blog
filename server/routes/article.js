@@ -99,6 +99,60 @@ router.get('/getList', function(req, res) {
     });
 });
 /**
+ * 获取所有文章
+ */
+router.get('/getAll', function (req, res) {
+    var sql = 'SELECT * FROM article order by date DESC';
+    db.query(sql,function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '查询错误'});
+            return;
+        }
+        res.send({
+            status: 0,
+            data: {list: row}
+        });
+    });
+});
+/**
+ * 提交文章——post
+ * @param text:'',author:'',email:'',refId:'',articleId:''
+ */
+router.post('/save', function (req, res) {
+    if (!req.body.tag) {
+        req.body.tag = '0';
+    }
+    var article = new Article(req.body),
+        sql = 'INSERT INTO article (title, date, article.desc, detail, author) VALUES (' +
+            db.pool.escape(article.title) + ',' + db.pool.escape(article.date) +
+            ',' + db.pool.escape(article.desc) + ',' + db.pool.escape(article.detail) +
+            ',' + db.pool.escape(article.author) + ')',
+        tags = req.body.tag.split(',');
+    db.query(sql,function (err, row) {
+        if (err) {
+            res.send({status: 6,msg: '保存文章错误'});
+            return;
+        }
+        tags.forEach(function (item,i) {
+            if (item) {
+                var sql = 'INSERT INTO article_to_tag (a_id, t_id) VALUES (' + db.pool.escape(row.insertId) + ','
+                    + db.pool.escape(item) + ')';
+                db.query(sql,function (err, row) {
+                    if (err) {
+                        res.send({status: 6,msg: '保存文章关联标签错误'});
+                    }
+                    if (i == (tags.length - 1)) {
+                        res.send({
+                            status: 0,
+                            data: {id: row.insertId}
+                        });
+                    }
+                });
+            }
+        });
+    });
+});
+/**
  * 获取文章列表——GET
  * @param id 文章id
  */
@@ -173,7 +227,9 @@ router.post('/submitComment', function (req, res) {
         });
     });
 });
-
+/**
+ * 获取所有标签
+ */
 router.get('/tags', function (req, res) {
     var sql = 'SELECT * FROM tag';
     db.query(sql,function (err, row) {

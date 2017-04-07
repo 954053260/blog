@@ -12,8 +12,7 @@
           <ul v-show="!item.isHide">
             <li class="file-item" v-for="value in item.list">
               <i class="icon ion-ios-paper-outline"></i>
-              <router-link :to="'/app/articleDetail?id='+ value.id" title="阅读全文" class="read-more">{{value.title}}
-              </router-link>
+              <router-link :to="'/app/articleDetail?id='+ value.id" title="阅读全文" class="read-more">{{value.title}}</router-link>
               <span class="file-item-note">{{value.date | date('yyyy-MM-dd')}}</span>
             </li>
           </ul>
