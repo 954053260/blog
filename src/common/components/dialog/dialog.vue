@@ -1,11 +1,10 @@
 <template>
     <transition :name="transitionName">
-        <div>
-            <div class="mask" @click="cancel()"></div>
+        <div class="confirm-position">
             <div class="confirm">
                 <h3 class="confirm-title">{{title}}</h3>
                 <div class="confirm-content">
-                    <p>{{content}}</p>
+                    <p v-html="content"></p>
                 </div>
                 <div class="confirm-buttons">
                     <button class="btn mr10" @click="cancel()">{{cancelText}}</button>

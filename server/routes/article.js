@@ -226,7 +226,7 @@ router.get('/comment', function (req, res) {
  * @param text:'',author:'',email:'',refId:'',articleId:''
  */
 router.post('/submitComment', function (req, res) {
-    if (!req.body.text && !req.body.author) {
+    if (!req.body.text || !req.body.author) {
         return res.send({status: 5,msg: '参数错误'});
     }
     var comment = new Comment(req.body),

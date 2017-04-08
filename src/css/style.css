@@ -56,11 +56,20 @@ input,textarea{
 .fr{
     float: right;
 }
+.m20{
+    margin: 20px;
+}
+.mt0{
+    margin-top: 0;
+}
 .mr10{
     margin-right: 10px;
 }
 .mt10{
     margin-top: 10px;
+}
+.mb10{
+    margin-bottom: 10px;
 }
 .p0-20{
     padding: 0 20px;
@@ -180,6 +189,36 @@ input,textarea{
     white-space: nowrap;
     text-overflow:ellipsis;
 }
+.i-table{
+    font-size: 14px;
+    color: #333;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.i-tr{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.i-tr:nth-child(2n+1){
+    background:#eee;
+}
+.i-tr:first-child{
+    color: #fff;
+    background: #39f;
+}
+.i-td{
+    padding: 8px 10px;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.i-td-1{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
 /*components*/
 .mask{
     position: fixed;
@@ -236,7 +275,7 @@ input,textarea{
 .barrage-content{
 
 }
-.barrage-item {
+.barrage-item{
     position: fixed;
     z-index: 999;
     display: block;
@@ -247,9 +286,15 @@ input,textarea{
     transition-timing-function: linear;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
 }
+.confirm-position{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 .confirm{
     position: relative;
-    top: 100px;
     margin: 0 auto;
     width: 80%;
     min-width: 300px;
@@ -257,7 +302,8 @@ input,textarea{
     background: #fff;
     border-radius: 5px;
     z-index: 1001;
-    box-shadow: 2px 2px 5px #666;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 .confirm-title{
     padding: 14px 16px;
@@ -279,6 +325,18 @@ input,textarea{
     padding: 12px 18px;
     text-align: right;
 }
+.dialog-enter-active {
+    animation-duration: .2s;
+    animation-name: scaleIn
+}
+
+.dialog-leave-active {
+    animation-duration: .2s;
+    animation-name: scaleOut;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out
+}
+/*animate*/
 @keyframes moveUpIn {
     0% {
         transform-origin: 0 0;
@@ -304,16 +362,61 @@ input,textarea{
         opacity: 0
     }
 }
+@keyframes scaleOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+@keyframes scaleIn {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 /*transition-fade*/
 .fade-enter-active, .fade-leave-active {
-    transition: opacity .3s
+    transition: all .3s
 }
 .fade-enter, .fade-leave-to{
-    opacity: 0
+    opacity: 0;
 }
 .slide-bottom-enter-active, .slide-bottom-leave-active {
     transition: transform .3s
 }
 .slide-bottom-enter, .slide-bottom-leave-to{
     transform: translate3d(0, 100%, 0);
+}
+/*detailed css*/
+/*添加标签-对话框*/
+.tag-confirm{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    font-size: 14px;
+}
+.tag-confirm b{
+    color: #666;
+}
+.tag-confirm > input{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    line-height: 25px;
 }

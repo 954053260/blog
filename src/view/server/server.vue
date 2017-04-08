@@ -47,8 +47,8 @@
                     },
                     {
                         icon: 'ion-ios-pricetags',
-                        to: '/server/addTag',
-                        title: '添加标签'
+                        to: '/server/tags',
+                        title: '标签列表'
                     }
                 ],
                 navIndex: 0
@@ -66,7 +66,7 @@
                     case '/server/list':
                         this.navIndex = 1;
                         break;
-                    case '/server/addTag':
+                    case '/server/tags':
                         this.navIndex = 2;
                         break;
                 }

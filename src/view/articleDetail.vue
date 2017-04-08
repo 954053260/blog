@@ -19,7 +19,7 @@
                             <p class="author"><b>{{item.author}}:</b></p>
                             <p class="date">{{item.date | date('yyyy-MMMM-dddd')}}</p>
                             <p class="text">{{item.text}}</p>
-                            <a class="c-00afec" @click="reply(index)"><b>回复</b></a>
+                            <a class="c-39f" @click="reply(index)"><b>回复</b></a>
                             <a class="fr c-999" @click="getComment(item.id,index)">
                                 <span v-if="item.reply && item.reply.isLoading">loading...</span>
                                 <span v-else>查看回复详情<i class="icon ion-ios-arrow-right"></i></span>
