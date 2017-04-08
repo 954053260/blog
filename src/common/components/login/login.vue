@@ -10,7 +10,7 @@
                 <i class="icon ion-locked"></i>
                 <input type="password" placeholder="密码" v-model="password">
             </label>
-            <a class="login-btn btn btn-39f" @click="login">登录</a>
+            <a class="login-btn btn btn-39f" @click="login">{{isLogin ? '登录中...' : '登录'}}</a>
         </div>
     </div>
 </template>
@@ -24,15 +24,19 @@
         data: function () {
             return {
                 username: '',
-                password: ''
+                password: '',
+                isLogin: false
             }
         },
         methods: {
             login: function () {
-                this.$emit('login',{
-                    username: this.username,
-                    password: this.password
-                });
+                this.isLogin = true;
+                setTimeout(() => {
+                    this.$emit('login',{
+                        username: this.username,
+                        password: this.password
+                    });
+                },500);
             }
         }
     }
