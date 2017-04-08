@@ -269,9 +269,6 @@ input,textarea{
     animation-play-state: running;
     animation-timing-function: ease-in-out
 }
-.barrage-content{
-
-}
 .barrage-item{
     position: fixed;
     z-index: 1001;

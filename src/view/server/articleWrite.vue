@@ -16,7 +16,6 @@
             </label>
             <p>分类:</p>
             <div class="write-tags">
-                <p v-if="!tags.length" class="loading">加载...</p>
                 <div v-if="tags.length">
                     <checkbox  v-for="tag in tags" v-model="tag.checked" name="tags" class="write-tag">{{tag.name}}</checkbox>
                 </div>
@@ -31,7 +30,9 @@
     export default {
         name:'articleWrite',
         created: function () {
+            this.$loading.show();
             this.$http.get('article/tags',{}).then((data) => {
+                this.$loading.hide();
                 if (data.status == 0) {
                     data.data.list.shift();
                     data.data.list.forEach(function (item) {
@@ -42,6 +43,7 @@
                     this.$toast.info(data.msg);
                 }
             },(err) => {
+                this.$loading.hide();
                 this.$toast.info(err.msg);
             });
         },

@@ -8,7 +8,6 @@ export default {
             barrageNode = document.createElement('div'),
             clientWidth = document.body.clientWidth,
             clientHeight = document.body.clientHeight;
-        barrageNode.className = 'barrage-content';
         document.body.appendChild(barrageNode);
         window.addEventListener('resize', function () {
             clientWidth = document.body.clientWidth;
