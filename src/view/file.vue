@@ -1,6 +1,6 @@
 <template>
   <div id="file">
-    <div class="file-list">
+    <div v-if="!isLoad" class="file-list">
       <div v-for="(item, index) in list">
         <h3>
           <a class="file-toggle" @click="toggleFile(index)">
@@ -29,18 +29,22 @@
     },
     data: function () {
       return {
+        isLoad: true,
         list: []
       }
     },
     methods: {
       getFile: function () {
+        this.$loading.show();
         this.$http.get('article/arrange',{}).then((data) => {
+          this.isLoad =  this.$loading.hide();
           if (data.status == 0) {
             this.list = data.data;
           } else {
             this.$toast.info(data.msg);
           }
         },(err) => {
+          this.isLoad =  this.$loading.hide();
           this.$toast.info(err.msg);
         });
       },

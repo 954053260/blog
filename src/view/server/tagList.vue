@@ -5,8 +5,7 @@
             <i class="icon ion-plus-round"></i>
             添加新标签
         </a>
-        <p v-if="!isLoad" class="loading mt10 tc">加载...</p>
-        <ul v-if="isLoad" class="m20 mt0 i-table">
+        <ul v-if="!isLoad" class="m20 mt0 i-table">
             <li class="i-tr">
                 <b class="i-td i-td-1">名称</b>
                 <b class="i-td w40 tc">操作</b>
@@ -24,8 +23,9 @@
     export default {
         name:'tagList',
         created: function () {
+            this.$loading.show();
             this.$http.get('article/tags',{}).then((data) => {
-                this.isLoad = true;
+                this.isLoad =  this.$loading.hide();
                 if (data.status == 0) {
                     data.data.list.shift();
                     this.tags = data.data.list;
@@ -33,7 +33,7 @@
                     this.$toast.info(data.msg);
                 }
             },(err) => {
-                this.isLoad = true;
+                this.isLoad =  this.$loading.hide();
                 this.$toast.info(err.msg);
             });
         },
@@ -43,7 +43,7 @@
         data: function () {
             return {
                 tags: [],
-                isLoad: false,
+                isLoad: true,
                 tagName: 'ASDASD'
             }
         },

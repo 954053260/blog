@@ -33,7 +33,9 @@ export default {
             itemNode.style.background = option.bg;
             itemNode.style.left = clientWidth + 'px';
             itemNode.style.top = option.top + 'px';
-            itemNode.style.transitionDuration = itemNode.style.webkitTransitionDuration = option.speed + 's';
+            itemNode.style.webkitTransitionDuration = option.speed + 's';
+            itemNode.style.mozTransitionDuration = option.speed + 's';
+            itemNode.style.transitionDuration = option.speed + 's';
             setTimeout(function () {
                 itemNode.style.left = -itemNode.offsetWidth + 'px';
                 setTimeout(function () {
@@ -41,7 +43,6 @@ export default {
                 }, option.speed*1000);
             }, 0);
         };
-
         barrage.clear = function () {
             barrageNode.innerHTML = '';
         };

@@ -1,6 +1,6 @@
 <template>
     <div id="articleDetail">
-        <div class="p0-20">
+        <div v-if="!isLoad" class="p0-20">
             <article>
                 <h2 class="article-title">{{detail.title}}</h2>
                 <p class="article-date">
@@ -53,6 +53,7 @@
         components: {'commentForm': commentForm},
         data: function () {
             return {
+                isLoad: true,
                 commentList: [],
                 articleId: '',
                 detail: ''
@@ -60,15 +61,18 @@
         },
         methods: {
             getDetail: function () {
+                this.$loading.show();
                 this.$http.get('article/detail',{data: {
                     id: this.articleId
                 }}).then((data) => {
+                    this.isLoad = this.$loading.hide();
                     if (data.status == 0) {
                         this.detail = data.data.detail;
                     } else {
                         this.$toast.info(data.msg);
                     }
                 },(err) => {
+                    this.isLoad = this.$loading.hide();
                     this.$toast.info(err.msg);
                 });
             },

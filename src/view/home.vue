@@ -64,11 +64,13 @@
         if (this.article.data[this.pageIndex]) {
           return;
         }
+        this.$loading.show();
         this.$http.get('article/getList',{data: {
           tag: this.$route.query.tag,
           start: this.pageIndex*10,
           len: 10
         }}).then((data) => {
+          this.$loading.hide();
           if (data.status == 0) {
             this.article.total += data.data.list.length;
             this.article.data[this.pageIndex] = data.data.list;
@@ -76,6 +78,7 @@
               this.article.isHasData = data.data.isHasData;
             }
           } else {
+            this.$loading.hide();
             this.$toast.info(data.msg);
           }
         },(err) => {

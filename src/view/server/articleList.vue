@@ -1,8 +1,7 @@
 <template>
     <div id="articleList">
         <h2 class="title">文章列表</h2>
-        <p v-if="!isLoad" class="loading mt10 tc">加载...</p>
-        <ul v-if="isLoad" class="m20 i-table">
+        <ul v-if="!isLoad" class="m20 i-table">
             <li class="i-tr">
                 <b class="i-td i-td-1">标题</b>
                 <b class="i-td w100 tc">时间</b>
@@ -22,15 +21,16 @@
     export default {
         name:'articleList',
         created: function () {
+            this.$loading.show();
             this.$http.get('article/getAll',{}).then((data) => {
-                this.isLoad = true;
+                this.isLoad = this.$loading.hide();
                 if (data.status == 0) {
                     this.articleList = data.data.list;
                 } else {
                     this.$toast.info(data.msg);
                 }
             },(err) => {
-                this.isLoad = true;
+                this.isLoad = this.$loading.hide();
                 this.$toast.info(err.msg);
             });
         },
@@ -40,7 +40,7 @@
         data: function () {
             return {
                 articleList: [],
-                isLoad: false
+                isLoad: true
             }
         },
         methods: {

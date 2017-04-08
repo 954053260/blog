@@ -137,10 +137,6 @@ input,textarea{
     -ms-flex-align: center;
     align-items: center;
 }
-.loading{
-    font-size: 14px;
-    color: #999;
-}
 .row{
     display:-webkit-box;
     display:-webkit-flex;
@@ -230,6 +226,7 @@ input,textarea{
     height: 100%;
     z-index: 1000;
 }
+
 .toast-content{
     position: fixed;
     font-size: 12px;
@@ -277,7 +274,7 @@ input,textarea{
 }
 .barrage-item{
     position: fixed;
-    z-index: 999;
+    z-index: 1001;
     display: block;
     padding: 8px 16px;
     border-radius: 4px;

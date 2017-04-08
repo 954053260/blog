@@ -13,6 +13,13 @@
                     <i class="icon ion-ios-arrow-right ion-right"></i>
                 </router-link>
             </li>
+            <li>
+                <a @click="toServer">
+                    <i class="icon ion-person"></i>
+                    <span class="name">管理</span>
+                    <i class="icon ion-ios-arrow-right ion-right"></i>
+                </a>
+            </li>
             <li class="title">文章分类</li>
             <li class="tags" v-for="(item,i) in tags">
                 <router-link :to="'/app/home?tag=' + item.id">
@@ -47,14 +54,29 @@
                     {to: '/app/file', icon: 'ion-ios-paper', name: '归档'},
                     {to: '/app/works', icon: 'ion-ios-camera', name: '作品'},
                     {to: '/app/navigation', icon: 'ion-ios-navigate', name: '导航'},
-                    {to: '/server/write', icon: 'ion-person', name: '管理'}
+//                    {to: '/server/write', icon: 'ion-person', name: '管理'}
 //                    {to: '/app/email', icon: 'ios-email', name: '留言'}
                 ],
-                tags: []
+                tags: [],
+                isLoginShow: false,
             }
         },
         methods: {
+            toServer: function () {
+                this.showLogin();
+//                this.$router.push('/server/write');
+            },
+            showLogin: function () {
+                this.$login.show((data) => {
+                    if (data.username == 'supervip' && data.password == '123456') {
+                        this.$toast.info('登录成功');
+                        this.$router.push('/server/write');
+                    } else {
+                        this.$toast.info('用户名或密码错误！');
+                    }
 
+                });
+            }
         }
     }
 </script>

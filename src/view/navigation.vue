@@ -51,6 +51,10 @@
           {
             name: 'Flexible移动终极适配',
             href: 'https://github.com/amfe/lib-flexible'
+          },
+          {
+            name: 'loading图标生成网站',
+            href: 'http://loading.io/'
           }
         ]
       }
