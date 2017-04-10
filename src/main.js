@@ -1,5 +1,5 @@
 //import 'iview/dist/styles/iview.css'
-import './assets/clock.gif'
+import './assets/hourglass.gif'
 import './css/ionicons.min.css'
 import './css/style.css'
 import './css/github-markdown.css'

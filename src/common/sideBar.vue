@@ -68,7 +68,7 @@
             },
             showLogin: function () {
                 this.$login.show((data) => {
-                    if (data.username == 'supervip' && data.password == '123456') {
+                    if (data.username == 'test1234' && data.password == '123456') {
                         this.$toast.info('登录成功');
                         this.$router.push('/server/write');
                     } else {

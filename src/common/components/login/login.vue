@@ -23,8 +23,8 @@
         props: [],
         data: function () {
             return {
-                username: '',
-                password: '',
+                username: 'test1234',
+                password: '123456',
                 isLogin: false
             }
         },

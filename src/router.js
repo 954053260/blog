@@ -16,7 +16,7 @@ import articleList from './view/server/articleList.vue'
 import tagList from './view/server/tagList.vue'
 Vue.use(VueRouter);
 const router = new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes: [
         { path: '/', redirect: '/app/home' },
         { path: '/app/', component: app,
