@@ -23,3 +23,18 @@ Vue.directive('clickoutside', {
         delete el.__vueClickOutside__;
     }
 });
+
+Vue.directive('imgload', {
+    bind (el, binding, vnode) {
+        var img = new Image(),
+            defaultSrc = 'http://119.23.44.183/images/audio.png';
+        img.src = el.getAttribute('src');
+        el.setAttribute('src', defaultSrc);
+        img.onload = function () {
+            el.setAttribute('src', this.getAttribute('src'));
+        };
+        img.onerror = function () {
+            Vue.toast('加载图片失败！');
+        };
+    }
+});

@@ -7,6 +7,7 @@ import './directive.js'
 import './common/components'
 import Vue from 'vue'
 import checkbox from './common/checkbox.vue'
+import audio from './common/audio.vue'
 import router from './router.js'
 import store from './store'
 import filter from './filter.js'
@@ -14,11 +15,12 @@ import app from './view/app.vue'
 import ajax from './ajax.js'
 import socket from './socket.js'
 Vue.component('checkbox', checkbox);
+Vue.component('vueAudio', audio);
 Vue.use(socket);
 //import iView from 'iview';
 //Vue.use(iView);
 Vue.use(ajax, {
-  root: 'http://localhost:3000/',
+  root: 'http://119.23.44.183/',
   timeout: 30000
 });
 new Vue({

@@ -36,7 +36,7 @@
         methods: {
             toTop: function () {
                 var timer = setInterval (() => {
-                    if ((this.$parent.$refs.wrap.scrollTop -= 100) <= 0) {
+                    if ((document.body.scrollTop -= 100) <= 0) {
                         clearInterval(timer);
                     };
                 },0);

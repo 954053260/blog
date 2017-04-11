@@ -3,7 +3,7 @@
         <img title="logo" class="header-logo" src="../assets/logo.png">
         <div class="text">
             <p>work space</p>
-            <p>开始新的旅途记录每个瞬间</p>
+            <p>开始新的旅途，记录每个瞬间</p>
         </div>
     </header>
 </template>

@@ -120,7 +120,7 @@ router.get('/getAll', function (req, res) {
  */
 router.post('/save', function (req, res) {
     if (!req.body.tag) {
-        req.body.tag = '0';
+        req.body.tag = '1';
     }
     if (!req.body.title && !req.body.detail) {
         return res.send({status: 5,msg: '参数错误'});

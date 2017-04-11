@@ -43,25 +43,20 @@
     methods: {
       toggleSide: function () {
         this.isToggleSide = !this.isToggleSide;
-        this.$refs.wrap.style.left = this.isToggleSide ? '300px' : 0;
+        this.$refs.wrap.style.marginLeft = this.isToggleSide ? '300px' : 0;
       }
     }
   }
 </script>
 <style scoped>
   .wrap{
-    position: absolute;
-    left: 300px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+    position: relative;
+    margin-left: 300px;
     background: #fff;
-    transition: left .3s;
-    -moz-transition: left .3s;	/* Firefox 4 */
-    -webkit-transition: left .3s;	/* Safari 和 Chrome */
-    -o-transition: left .3s;	/* Opera */
+    transition: all .3s;
+    -moz-transition: all .3s;	/* Firefox 4 */
+    -webkit-transition: all .3s;	/* Safari 和 Chrome */
+    -o-transition: all .3s;	/* Opera */
   }
   .nav-icon{
     position: absolute;
