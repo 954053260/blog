@@ -9,6 +9,9 @@ const store = new Vuex.Store({
     state: {
         home: {
             pageIndex: 0//当前页数
+        },
+        works: {
+            showAudio: false
         }
     },
     getters:{

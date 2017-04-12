@@ -1,22 +1,40 @@
 <template>
   <div id="works">
-    <p>暂无</p>
+    <ul class="navigation-list">
+      <li class="navigation-item">
+        <a @click="toAudio">
+          <span class="c-000">1.</span>
+          vue音乐播放器组件
+        </a>
+      </li>
+    </ul>
   </div>
 </template>
-<script type="text/ecmascript-6">
+<style scoped>
+  .navigation-list{
+    padding: 0 20px;
+  }
+  .navigation-item{
+    margin: 10px 0;
+  }
+  .navigation-item a{
+    color: #39f;
+    font-size: 14px;
+  }
+</style>
+<script>
   export default {
-    name: 'works',
+    name:'works',
     data: function () {
       return {
 
       }
     },
     methods: {
-
+      toAudio: function () {
+        this.$store.state.works.showAudio = true;
+      }
     }
   }
 </script>
 
-<style>
-
-</style>

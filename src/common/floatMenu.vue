@@ -7,6 +7,9 @@
         <a @click="toChat(true)">
             <i class="icon ion-chatbox-working"></i>
         </a>
+        <a @click="toAudio()">
+            <i class="icon ion-music-note"></i>
+        </a>
         <transition name="slide-bottom">
             <div v-if="isChatShow" class="chat">
                 <div class="chat-content">
@@ -23,6 +26,9 @@
                     </div>
                 </div>
             </div>
+        </transition>
+        <transition name="slide-bottom">
+            <vue-audio v-show="isAudioShow"></vue-audio>
         </transition>
     </div>
 </template>
@@ -48,6 +54,9 @@
                     this.isChatShow = false;
                 }
             },
+            toAudio: function () {
+                this.$store.state.works.showAudio = !this.$store.state.works.showAudio;
+            },
             submitChat: function () {
                 this.$socket.emit('chat',{text: this.chat});
                 this.chat = '';
@@ -57,6 +66,11 @@
             return {
                 isChatShow: false,
                 chat: ''
+            }
+        },
+        computed: {
+            isAudioShow : function () {
+                return this.$store.state.works.showAudio;
             }
         }
     }
