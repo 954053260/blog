@@ -31,7 +31,15 @@
                     </a>
                     <span class="time-total hover">{{time}}</span>
                     <a class="a-lrc-btn hover" title="歌词"></a>
-                    <a class="a-volume-btn hover"></a>
+                    <a class="a-volume-btn hover">
+                        <a class="a-volume-progress" @click="clickProgress($event)">
+                            <div class="a-volume-progress-bar">
+                                <div ref="volume-progress" class="a-volume-progress-bar-past">
+                                    <span class="a-progress-point"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </a>
                     <a class="a-more-btn hover" title="更多" @click="toggleList"></a>
                 </div>
             </div>
@@ -53,6 +61,7 @@
         },
         mounted: function () {
             var audio = this.$refs.audio;
+            audio.volume = 1;
             audio.onloadstart = () => {
                 this.$refs.progress.style.width = 0;
                 this.isPlay ? audio.play() : audio.pause();
@@ -169,18 +178,29 @@
             clickProgress: function (e) {
                 var target = e.target;
                 var x = e.offsetX;
+                var y = target.offsetHeight - e.offsetY;
                 switch (target.className) {
                     case 'a-progress-wrapper hover':
                     case 'a-progress-bar':
                         target = target.querySelector('.a-progress-bar-past');
                         break;
+                    case 'a-volume-progress':
+                    case 'a-volume-progress-bar':
+                        target = target.querySelector('.a-volume-progress-bar-past');
+                        break;
                     case 'a-progress-bar-past':
+                    case 'a-volume-progress-bar-past':
                         break;
                     default :
                         return;
                 }
-                target.style.width = x + 'px';
-                this.setTime(x/(target.parentNode.offsetWidth)*this.$refs.audio.duration);
+                if (target.className == 'a-progress-bar-past') {
+                    target.style.width = x + 'px';
+                    this.setTime(x/(target.parentNode.offsetWidth)*this.$refs.audio.duration);
+                } else {
+                    target.style.height = y + 'px';
+                    this.setVolume(y/target.parentNode.offsetHeight);
+                }
             },
             ontimeupdate: function () {
                 var audio = this.$refs.audio;
@@ -199,6 +219,9 @@
             },
             setTime: function (time) {
                 this.$refs.audio.currentTime = time;
+            },
+            setVolume: function (volume) {
+                this.$refs.audio.volume = Math.min(Math.ceil(volume),1);
             }
         }
     }
@@ -263,7 +286,6 @@
     .a-control-btn{
         float: left;
         height: 50px;
-        overflow: hidden;
     }
     .a-prev-btn,
     .a-play-btn,
@@ -348,6 +370,31 @@
         top: -4px;
         cursor: pointer;
         background: url('../assets/music-spirit.png') no-repeat -53px -750px;
+    }
+    .a-volume-progress{
+        display: none;
+        width: 2px;
+        background: rgba(21, 75, 130, 0.9);
+        height: 70px;
+        position: absolute;
+        bottom: 20px;
+        left: -3px;
+        padding: 5px 9px;
+    }
+    .a-volume-btn:hover .a-volume-progress{
+        display: block;
+    }
+    .a-volume-progress-bar{
+        position: relative;
+        height: 100%;
+        background: #ccc;
+    }
+    .a-volume-progress-bar-past{
+        position: absolute;
+        bottom: 0;
+        width: 2px;
+        height: 70px;
+        background: #fff;
     }
     .time-total{
         float: left;
