@@ -1,4 +1,5 @@
-/*custom scrollbar*/
+/* ---------------------reset CSS----------------------- */
+/*custom scrollBar*/
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -10,21 +11,15 @@
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
-/*init*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+html,body{
+    height: 100%;
 }
-html,
-body{
-    height: 100%
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form{
+    margin:0;
 }
-body{
-    /*overflow: hidden;*/
-}
-ul{
-    list-style-type: none;
+ul,ol{
+    padding-left:0;
+    list-style-type:none;
 }
 a{
     color: inherit;
@@ -34,55 +29,26 @@ a:link{
     text-decoration: none;
     cursor: pointer;
 }
-input,textarea{
+input, textarea{
     outline: none;
 }
-/*common*/
-.c-000{
-    color: #000;
-}
-.c-999{
-    color: #999;
-}
-.c-39f{
-    color: #39f;
-}
-.dp-n{
-    display: none
-}
-.fl{
-    float: left
-}
-.fr{
-    float: right;
-}
-.m20{
-    margin: 20px;
-}
-.mt0{
-    margin-top: 0;
-}
-.mr10{
-    margin-right: 10px;
-}
-.mt10{
-    margin-top: 10px;
-}
-.mb10{
-    margin-bottom: 10px;
-}
-.p0-20{
-    padding: 0 20px;
-}
-.w100{
-    width: 100px;
-}
-.w40{
-    width: 40px;
-}
-.tc{
-    text-align: center;
-}
+/* ---------------------single CSS----------------------- */
+.c-000{color: #000;}
+.c-999{color: #999;}
+.c-39f{color: #39f;}
+.dp-n{display: none;}
+.fl{float: left;}
+.fr{float: right;}
+.m20{margin: 20px;}
+.mt0{margin-top: 0;}
+.mr10{margin-right: 10px;}
+.mt10{margin-top: 10px;}
+.mb10{margin-bottom: 10px;}
+.p0-20{padding: 0 20px;}
+.tc{text-align: center;}
+.w40{width: 40px;}
+.w100{width: 100px;}
+/* ---------------------common CSS----------------------- */
 .btn{
     display: inline-block;
     padding: 8px 16px;
@@ -96,7 +62,7 @@ input,textarea{
     background-color: #39f;
     border-color: #39f;
 }
-.clear-float {/*清除浮动*/
+.clear-float{/*清除浮动*/
     zoom:1;
 }
 .clear-float:after {
@@ -106,43 +72,6 @@ input,textarea{
     width: 0;
     height: 0;
     visibility:hidden;
-}
-.center{/*居中*/
-    display: box;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-direction: normal;
-    -moz-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-.row{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
 }
 .col,
 .col-1{
@@ -216,7 +145,6 @@ input,textarea{
     -ms-flex:1;
     flex:1;
 }
-/*components*/
 .mask{
     position: fixed;
     top: 0;
@@ -227,49 +155,13 @@ input,textarea{
     height: 100%;
     z-index: 1000;
 }
-
-.toast-content{
-    position: fixed;
-    font-size: 12px;
-    z-index: 1010;
-    width: 100%;
-    top: 16px;
-    left: 0;
+.row{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
 }
-.toast-notice{
-    position: absolute;
-    left: 50%;
-    width: auto;
-    vertical-align: middle;
-}
-.toast-message{
-    position: relative;
-    right: 50%;
-    padding: 8px 16px;
-    border-radius: 4px;
-    box-shadow: 0 1px 6px rgba(0,0,0,.2);
-    background: #fff;
-    display: block;
-}
-.toast-icon{
-    position: relative;
-    top: 1px;
-    margin-right: 10px;
-    color: #39f;
-    font-size: 14px;
-}
-/*transition-toast*/
-.toast-enter-active {
-    animation-duration: .3s;
-    animation-name: moveUpIn
-}
-
-.toast-leave-active {
-    animation-duration: .3s;
-    animation-name: moveUpOut;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out
-}
+/* ---------------------components CSS----------------------- */
 .barrage-item{
     position: fixed;
     z-index: 1001;
@@ -324,10 +216,73 @@ input,textarea{
     animation-duration: .2s;
     animation-name: scaleIn
 }
-
 .dialog-leave-active {
     animation-duration: .2s;
     animation-name: scaleOut;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out
+}
+.tag-confirm{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    font-size: 14px;
+}
+.tag-confirm b{
+    color: #666;
+}
+.tag-confirm > input{
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    line-height: 25px;
+}
+.toast-content{
+    position: fixed;
+    font-size: 12px;
+    z-index: 1010;
+    width: 100%;
+    top: 16px;
+    left: 0;
+}
+.toast-notice{
+    position: absolute;
+    left: 50%;
+    width: auto;
+    vertical-align: middle;
+}
+.toast-message{
+    position: relative;
+    right: 50%;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+    background: #fff;
+    display: block;
+}
+.toast-icon{
+    position: relative;
+    top: 1px;
+    margin-right: 10px;
+    color: #39f;
+    font-size: 14px;
+}
+/*transition-toast*/
+.toast-enter-active {
+    animation-duration: .3s;
+    animation-name: moveUpIn
+}
+.toast-leave-active {
+    animation-duration: .3s;
+    animation-name: moveUpOut;
     animation-play-state: running;
     animation-timing-function: ease-in-out
 }
@@ -377,7 +332,7 @@ input,textarea{
         opacity: 1;
     }
 }
-/*transition-fade*/
+/*transition*/
 .fade-enter-active, .fade-leave-active {
     transition: all .3s
 }
@@ -389,29 +344,4 @@ input,textarea{
 }
 .slide-bottom-enter, .slide-bottom-leave-to{
     transform: translate3d(0, 100%, 0);
-}
-/*detailed css*/
-/*添加标签-对话框*/
-.tag-confirm{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    font-size: 14px;
-}
-.tag-confirm b{
-    color: #666;
-}
-.tag-confirm > input{
-    -webkit-box-flex:1;
-    -webkit-flex:1;
-    -ms-flex:1;
-    flex:1;
-    margin-left: 10px;
-    border: 1px solid #ddd;
-    line-height: 25px;
 }

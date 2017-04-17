@@ -55,6 +55,10 @@
           {
             name: 'loading图标生成网站',
             href: 'http://loading.io/'
+          },
+          {
+            name: 'HTML5、CSS3浏览器兼容性',
+            href: 'http://caniuse.com/'
           }
         ]
       }

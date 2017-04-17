@@ -221,7 +221,7 @@
                 this.$refs.audio.currentTime = time;
             },
             setVolume: function (volume) {
-                this.$refs.audio.volume = Math.min(Math.ceil(volume),1);
+                this.$refs.audio.volume = Math.min(volume.toFixed(1), 1);
             }
         }
     }

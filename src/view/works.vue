@@ -4,7 +4,7 @@
       <li class="navigation-item">
         <a @click="toAudio">
           <span class="c-000">1.</span>
-          vue音乐播放器组件
+          音乐播放器组件
         </a>
       </li>
     </ul>

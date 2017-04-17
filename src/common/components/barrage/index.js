@@ -18,7 +18,7 @@ export default {
 
         barrage.info = function (option) {
             option = {
-                info: option.info || '', //文字
+                info: option.info || '内容为空！', //文字
                 speed: option.speed || 8, //延迟,单位秒,默认8
                 top: option.top || Math.random()*(clientHeight - 35), //距离底部高度,单位px,默认随机
                 color: option.color || colors[parseInt(Math.random()*colors.length)], //颜色,默认白色
