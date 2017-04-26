@@ -44,6 +44,7 @@ export default {
                 onCancel: dialog.onCancel || function () {},
                 onOk: dialog.onOk || function () {}
             };
+
             this.dialogs.push(dialog);
         };
     }

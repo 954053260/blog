@@ -42,17 +42,21 @@
         methods: {
             toTop: function () {
                 var timer = setInterval (() => {
+
                     if ((document.body.scrollTop -= 100) <= 0) {
                         clearInterval(timer);
                     };
+
                 },0);
             },
             toChat: function (bool) {
+
                 if (typeof bool === 'boolean') {
                     this.isChatShow = !this.isChatShow;
                 } else {
                     this.isChatShow = false;
                 }
+
             },
             toAudio: function () {
                 this.$store.state.works.showAudio = !this.$store.state.works.showAudio;

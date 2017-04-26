@@ -51,6 +51,7 @@
                     articleId: this.articleId,
                 }}).then((data) => {
                     this.loading = false;
+
                     if (data.status == 0) {
                         this.$emit('submitComment',{
                             id: data.data.id,
@@ -63,6 +64,7 @@
                     } else {
                         this.$toast.info(data.msg);
                     }
+
                 },(err) => {
                     this.loading = false;
                     this.$toast.info(err.msg);

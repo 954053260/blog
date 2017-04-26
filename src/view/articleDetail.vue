@@ -62,15 +62,18 @@
         methods: {
             getDetail: function () {
                 this.$loading.show();
+
                 this.$http.get('article/detail',{data: {
                     id: this.articleId
                 }}).then((data) => {
                     this.isLoad = this.$loading.hide();
+
                     if (data.status == 0) {
                         this.detail = data.data.detail;
                     } else {
                         this.$toast.info(data.msg);
                     }
+
                 },(err) => {
                     this.isLoad = this.$loading.hide();
                     this.$toast.info(err.msg);
@@ -82,53 +85,78 @@
              */
             getComment: function (id,index) {
                 var type = 1;
+
                 if (id) {
                     type = 2;
+
                     if (this.commentList[index].reply == undefined) {
                         this.$set(this.commentList[index],'reply',{
                             isLoading: true,
                             list: []
                         });
                     } else {
-                        if (type == 2) this.commentList[index].reply.isLoading = true;
+
+                        if (type == 2) {
+                            this.commentList[index].reply.isLoading = true;
+                        }
+
                     }
+
                 }
+
                 var type = id ? 2 : 1;
+
                 this.$http.get('article/comment',{data: {
                     id: id || this.articleId,
                     type: type
                 }}).then((data) => {
-                    if (type == 2) this.commentList[index].reply.isLoading = false;
+
+                    if (type == 2) {
+                        this.commentList[index].reply.isLoading = false;
+                    }
+
                     if (data.status == 0) {
+
                         if (type == 1) {
                             this.commentList = data.data.list;
                         }else{
                             this.commentList[index].reply.list = data.data.list;
                         }
+
                     } else {
                         this.$toast.info(data.msg);
                     }
+
                 },(err) => {
-                    if (type == 2) this.commentList[index].reply.isLoading = false;
+
+                    if (type == 2) {
+                        this.commentList[index].reply.isLoading = false;
+                    }
+
                     this.$toast.info(err.msg);
                 });
             },
             reply: function (index) {
+
                 if (this.commentList[index].replyShow === undefined) {
                     this.$set(this.commentList[index], 'replyShow', false);
                 }
+
                 this.commentList[index].replyShow = !this.commentList[index].replyShow;
             },
             submitComment: function (data) {
                 var index = data.param;
+
                 if (index || index == 0) {
                     this.reply(index);
+
                     if (this.commentList[index].reply == undefined) {
                         this.$set(this.commentList[index], 'reply', {
                             isLoading: false,
                             list: []
                         });
                     }
+
                     this.commentList[index].reply.list.unshift({
                         id: data.id,
                         text: data.text,
@@ -143,6 +171,7 @@
                         author: data.author
                     });
                 }
+
             }
         }
     }

@@ -38,11 +38,13 @@
         this.$loading.show();
         this.$http.get('article/arrange',{}).then((data) => {
           this.isLoad =  this.$loading.hide();
+
           if (data.status == 0) {
             this.list = data.data;
           } else {
             this.$toast.info(data.msg);
           }
+
         },(err) => {
           this.isLoad =  this.$loading.hide();
           this.$toast.info(err.msg);
@@ -50,11 +52,13 @@
       },
       toggleFile: function (index) {
         var item = this.list[index];
+
         if (item.isHide == undefined) {
           this.$set(item, 'isHide', true);
         } else {
           item.isHide = !item.isHide;
         }
+
       }
     }
   }

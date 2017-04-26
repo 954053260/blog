@@ -1,5 +1,5 @@
 /**
- * Created by hyt on 2017/4/8.
+ * Created by tz on 2017/4/8.
  */
 import Login from './login.vue'
 export default {
@@ -12,7 +12,10 @@ export default {
             login;
         login = Vue.login = Vue.prototype.$login = {
             show: function (callback) {
-                if (loginVue) return;
+                if (loginVue) {
+                    return;
+                }
+
                 loginNode.innerHTML = `<div class="mask" @click="remove()"></div><login @login="login"></login>`;
                 document.body.appendChild(loginNode);
                 loginVue = new Vue({
@@ -26,10 +29,12 @@ export default {
                         clientHeight = document.body.clientHeight;
                         height = loginElement.offsetHeight;
                         loginElement.style.top = -height + 'px';
+
                         setTimeout(() => {
                             loginElement.style.top = (clientHeight - height)/3 + 'px';
                             this.isComplete = true;
                         }, 0);
+
                     },
                     data: {
                         isComplete: false
@@ -43,10 +48,12 @@ export default {
                             if (this.isComplete) {
                                 this.isComplete = false;
                                 loginElement.style.top = clientHeight + 'px';
+
                                 setTimeout(() => {
                                     loginElement = loginVue = null;
                                     this.$el.parentNode.removeChild(this.$el);
                                 },300);
+
                             }
                         }
                     }

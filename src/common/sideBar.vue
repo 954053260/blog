@@ -37,11 +37,13 @@
         name:'sideBar',
         created: function () {
             this.$http.get('article/tags',{}).then((data) => {
+
                 if (data.status == 0) {
                     this.tags = data.data.list;
                 } else {
                     this.$toast.info(data.msg);
                 }
+
             },(err) => {
                 this.$toast.info(err.msg);
             });
@@ -54,7 +56,7 @@
                     {to: '/app/file', icon: 'ion-ios-paper', name: '归档'},
                     {to: '/app/works', icon: 'ion-ios-camera', name: '作品'},
                     {to: '/app/navigation', icon: 'ion-ios-navigate', name: '导航'},
-//                    {to: '/server/write', icon: 'ion-person', name: '管理'}
+                    {to: '/app/read', icon: 'ion-ios-book', name: '读书'}
 //                    {to: '/app/email', icon: 'ios-email', name: '留言'}
                 ],
                 tags: [],
@@ -68,6 +70,7 @@
             },
             showLogin: function () {
                 this.$login.show((data) => {
+
                     if (data.username == 'test1234' && data.password == '123456') {
                         this.$toast.info('登录成功');
                         this.$router.push('/server/write');

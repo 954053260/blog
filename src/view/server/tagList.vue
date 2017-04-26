@@ -26,12 +26,14 @@
             this.$loading.show();
             this.$http.get('article/tags',{}).then((data) => {
                 this.isLoad =  this.$loading.hide();
+
                 if (data.status == 0) {
                     data.data.list.shift();
                     this.tags = data.data.list;
                 } else {
                     this.$toast.info(data.msg);
                 }
+
             },(err) => {
                 this.isLoad =  this.$loading.hide();
                 this.$toast.info(err.msg);

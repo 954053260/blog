@@ -14,7 +14,10 @@ export default {
         });
 
         loading.show = function (text) {
-            if (this.texts.length) return;
+            if (this.texts.length) {
+                return;
+            }
+
             this.texts.push(text || '加载中...');
             return true;
         };

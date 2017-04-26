@@ -35,11 +35,14 @@ export default {
             itemNode.style.webkitTransitionDuration = option.speed + 's';
             itemNode.style.mozTransitionDuration = option.speed + 's';
             itemNode.style.transitionDuration = option.speed + 's';
-            setTimeout(function () {
+
+           setTimeout(function () {
                 itemNode.style.left = -itemNode.offsetWidth + 'px';
+
                 setTimeout(function () {
                     itemNode.parentNode && itemNode.parentNode.removeChild(itemNode);
                 }, option.speed*1000);
+
             }, 0);
         };
         barrage.clear = function () {

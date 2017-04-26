@@ -62,26 +62,32 @@
         mounted: function () {
             var audio = this.$refs.audio;
             audio.volume = 1;
+
             audio.onloadstart = () => {
                 this.$refs.progress.style.width = 0;
                 this.isPlay ? audio.play() : audio.pause();
                 this.ontimeupdate();
             };
+
             audio.ontimeupdate = () => {
                 this.ontimeupdate();
             };
+
             audio.onended = () => {
                 if (!audio.loop) {
                     this.isPlay = true;
                     this.clickNext();
                 }
             };
+
             audio.onplay = () => {
                 this.isPlay = true;
             };
+
             audio.onpause = () => {
                 this.isPlay = false;
             };
+
             audio.onerror = () => {
                 this.$toast.info('音乐加载失败！');
             };
@@ -139,12 +145,13 @@
         },
         methods: {
             clickPlay: function () {
-                console.log(this.isPlay)
+
                 if (this.isPlay) {
                     this.$refs.audio.pause();
                 } else {
                     this.$refs.audio.play();
                 }
+
             },
             toggleLoop: function () {
                 this.isLoop = !this.isLoop;
@@ -152,28 +159,34 @@
             },
             toggleList: function () {
                 var listNode = this.$refs.list;
+
                 if (listNode.offsetHeight) {
                     listNode.style.height = 0;
                 } else {
                     listNode.style.height = 37*this.list.length + 'px';
                 }
+
             },
             select: function (index) {
                 this.index = index;
             },
             clickPrev: function () {
+
                 if (this.index == 0) {
                     this.index = this.list.length - 1;
                 } else {
                     this.index -= 1;
                 }
+
             },
             clickNext: function () {
+
                 if (this.index == this.list.length - 1) {
                     this.index = 0;
                 } else {
                     this.index += 1;
                 }
+
             },
             clickProgress: function (e) {
                 var target = e.target;
@@ -194,6 +207,7 @@
                     default :
                         return;
                 }
+
                 if (target.className == 'a-progress-bar-past') {
                     target.style.width = x + 'px';
                     this.setTime(x/(target.parentNode.offsetWidth)*this.$refs.audio.duration);
@@ -201,19 +215,29 @@
                     target.style.height = y + 'px';
                     this.setVolume(y/target.parentNode.offsetHeight);
                 }
+
             },
             ontimeupdate: function () {
                 var audio = this.$refs.audio;
                 var duration = audio.duration;
                 var currentTime = audio.currentTime;
+
                 if (isNaN(duration) || isNaN(currentTime)) {
                     return;
                 }
+
                 var time = duration - currentTime;
                 var minute = parseInt(time/60);
                 var second = Math.ceil(time%60);
-                if (minute < 10) minute = '0' + minute;
-                if (second < 10) second = '0' + second;
+
+                if (minute < 10) {
+                    minute = '0' + minute
+                };
+
+                if (second < 10) {
+                    second = '0' + second
+                };
+
                 this.time = minute + ':' + second;
                 this.$refs.progress.style.width = currentTime/duration*100 + '%';
             },

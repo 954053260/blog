@@ -33,15 +33,19 @@
             this.$loading.show();
             this.$http.get('article/tags',{}).then((data) => {
                 this.$loading.hide();
+
                 if (data.status == 0) {
                     data.data.list.shift();
+
                     data.data.list.forEach(function (item) {
                         item.checked = false;
                     });
+
                     this.tags = data.data.list;
                 } else {
                     this.$toast.info(data.msg);
                 }
+
             },(err) => {
                 this.$loading.hide();
                 this.$toast.info(err.msg);
@@ -67,14 +71,17 @@
                 return this;
             },
             submit: function () {
+
                 if (this.isSubmitting) {
                     return;
                 }
+
                 this.isSubmitting = true;
                 var tag = [];
                 this.tags.forEach(function (item) {
                     item.checked && tag.push(item.id);
                 });
+
                 this.$http.post('article/save',{data: {
                     author: this.author,
                     title: this.title,
@@ -82,16 +89,19 @@
                     tag: tag.join()
                 }}).then((data) => {
                     this.isSubmitting = false;
+
                     if (data.status == 0) {
                         this.$toast.info('保存文章成功！');
                         this.init();
                     } else {
                         this.$toast.info(data.msg);
                     }
+
                 },(err) => {
                     this.isSubmitting = false;
                     this.$toast.info(err.msg);
                 });
+
             }
         }
     }

@@ -24,11 +24,13 @@
             this.$loading.show();
             this.$http.get('article/getAll',{}).then((data) => {
                 this.isLoad = this.$loading.hide();
+
                 if (data.status == 0) {
                     this.articleList = data.data.list;
                 } else {
                     this.$toast.info(data.msg);
                 }
+
             },(err) => {
                 this.isLoad = this.$loading.hide();
                 this.$toast.info(err.msg);

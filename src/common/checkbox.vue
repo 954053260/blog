@@ -25,12 +25,13 @@
         },
         methods: {
             change: function (event) {
+
                 if (this.disabled) {
                     return false;
                 }
-                const checked = event.target.checked;
-                this.checked = checked;
-                this.$emit('input', checked);
+
+                this.checked = event.target.checked;
+                this.$emit('input', this.checked);
             }
         }
     }

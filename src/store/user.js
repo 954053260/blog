@@ -16,13 +16,15 @@ export default {
         login ({commit}, user) {
             return Vue.http.post('user/login', {data:user})
                 .then(data => {
+
                     if (data.status == 0) {
                         commit('SET_USER', user);
                         return data;
                     } else {
                         return Promise.reject(data.msg);
                     }
-                })
+
+                });
         }
     }
 }

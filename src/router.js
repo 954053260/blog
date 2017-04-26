@@ -9,6 +9,7 @@ import works from './view/works.vue'
 import navigation from './view/navigation.vue'
 import file from './view/file.vue'
 import email from './view/email.vue'
+import read from './view/read.vue'
 import articleDetail from './view/articleDetail.vue'
 import server from './view/server/server.vue'
 import articleWrite from './view/server/articleWrite.vue'
@@ -26,6 +27,7 @@ const router = new VueRouter({
                 { path: 'navigation', component: navigation},
                 { path: 'file', component: file},
                 { path: 'email', component: email},
+                { path: 'read', component: read},
                 { path: 'articleDetail', component: articleDetail}
             ]
         },
