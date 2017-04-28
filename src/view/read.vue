@@ -80,13 +80,13 @@
             stars: [2, 2, 2, 2, 0]
           },
           {
-            picture: '/dist/css-1.jpg',
+            picture: '/dist/node-1.jpg',
             name: '深入浅出Node.js',
             score: 8.7,
             stars: [2, 2, 2, 2, 0]
           },
           {
-            picture: '/dist/node-1.jpg',
+            picture: '/dist/css-1.jpg',
             name: 'css揭秘',
             score: 9.4,
             stars: [2, 2, 2, 2, 1]
@@ -139,7 +139,7 @@
   }
   .book-item .score{
     margin: 10px 15px;
-    color: #E91E63;
+    color: #FF9800;
   }
   .score > span{
     font-size: 14px;
