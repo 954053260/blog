@@ -35,7 +35,8 @@ export default {
                     reject(this.statusText);
                 };
                 xhr.ontimeout = function () {
-                    reject(http.config.ontimeout());
+                    http.config.ontimeout();
+                    reject();
                 };
                 xhr.send();
             });

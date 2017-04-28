@@ -1,5 +1,5 @@
 /**
- * Created by hyt on 2017/1/11.
+ * Created by tz on 2017/1/11.
  */
 import Vue from 'vue'
 export default {

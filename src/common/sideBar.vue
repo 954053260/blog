@@ -71,7 +71,7 @@
             showLogin: function () {
                 this.$login.show((data) => {
 
-                    if (data.username == 'test1234' && data.password == '123456') {
+                    if (data.username == 'admin' && data.password == '123456') {
                         this.$toast.info('登录成功');
                         this.$router.push('/server/write');
                     } else {
@@ -89,7 +89,7 @@
         top: 0;
         bottom: 0;
         left: 0;
-        width: 299px;
+        width: 249px;
         color: #555;
         font-size: 14px;
         border-right: 1px solid #ddd;

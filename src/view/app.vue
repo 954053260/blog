@@ -43,7 +43,7 @@
     methods: {
       toggleSide: function () {
         this.isToggleSide = !this.isToggleSide;
-        this.$refs.wrap.style.marginLeft = this.isToggleSide ? '300px' : 0;
+        this.$refs.wrap.style.marginLeft = this.isToggleSide ? '250px' : 0;
       }
     }
   }
@@ -51,7 +51,7 @@
 <style scoped>
   .wrap{
     position: relative;
-    margin-left: 300px;
+    margin-left: 250px;
     background: #fff;
     transition: all .3s;
     -moz-transition: all .3s;	/* Firefox 4 */

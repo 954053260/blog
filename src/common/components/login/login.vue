@@ -23,16 +23,17 @@
         props: [],
         data: function () {
             return {
-                username: 'test1234',
-                password: '123456',
+                username: '',
+                password: '',
                 isLogin: false
             }
         },
         methods: {
             login: function () {
+
                 this.isLogin = true;
                 setTimeout(() => {
-                    this.$emit('login',{
+                    this.$emit('login', {
                         username: this.username,
                         password: this.password
                     });
