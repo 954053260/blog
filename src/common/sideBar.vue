@@ -36,7 +36,7 @@
     export default {
         name:'sideBar',
         created: function () {
-            this.$http.get('article/tags',{}).then((data) => {
+            this.$http.get('article/tags', {}).then((data) => {
 
                 if (data.status == 0) {
                     this.tags = data.data.list;

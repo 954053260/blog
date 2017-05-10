@@ -20,6 +20,7 @@
   import header from '../common/header.vue'
   import floatMenu from '../common/floatMenu.vue'
   import sideBar from '../common/sideBar.vue'
+
   export default {
     name:'app',
     created: function () {
@@ -31,7 +32,11 @@
     mounted: function () {
       this.isRender = true;
     },
-    components: {'vHeader': header, 'floatMenu': floatMenu, 'sideBar': sideBar},
+    components: {
+      'vHeader': header,
+      'floatMenu': floatMenu,
+      'sideBar': sideBar
+    },
     data: function () {
       return {
         isRender: false,

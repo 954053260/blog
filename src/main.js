@@ -20,7 +20,7 @@ Vue.use(socket);
 //import iView from 'iview';
 //Vue.use(iView);
 Vue.use(ajax, {
-  root: 'http://119.23.44.183/',
+  root: 'http://localhost:3000/',
   timeout: 30000
 });
 new Vue({

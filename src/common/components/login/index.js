@@ -45,6 +45,7 @@ export default {
                             callback && callback(data);
                         },
                         remove: function () {
+
                             if (this.isComplete) {
                                 this.isComplete = false;
                                 loginElement.style.top = clientHeight + 'px';
@@ -55,6 +56,7 @@ export default {
                                 },300);
 
                             }
+
                         }
                     }
                 });

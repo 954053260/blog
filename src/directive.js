@@ -27,7 +27,7 @@ Vue.directive('clickoutside', {
 Vue.directive('imgload', {
     bind (el, binding, vnode) {
         var img = new Image(),
-            defaultSrc = 'http://119.23.44.183/images/audio.png';
+            defaultSrc = '/images/audio.png';
         img.src = el.getAttribute('src');
         el.setAttribute('src', defaultSrc);
         img.onload = function () {

@@ -65,10 +65,9 @@
         if (this.article.data[this.pageIndex]) {
           return;
         }
-
         this.$loading.show();
 
-        this.$http.get('article/getList',{data: {
+        this.$http.get('article/getList', {data: {
           tag: this.$route.query.tag,
           start: this.pageIndex*10,
           len: 10
@@ -89,6 +88,7 @@
           }
 
         },(err) => {
+          this.$loading.hide();
           this.$toast.info(err.msg);
         });
       },

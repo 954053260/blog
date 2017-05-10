@@ -19,25 +19,31 @@ export default {
          */
         http.get = function (url, options) {
             return new Promise(function (resolve, reject) {
-                if(url.indexOf('?') != -1){
+
+                if (url.indexOf('?') != -1) {
                     url += urlEncode(options.data);
-                }else{
+                } else {
                     url += '?' + urlEncode(options.data).slice(1);
                 }
+
                 var xhr = new XMLHttpRequest();
                 xhr.timeout = http.config.timeout;
                 xhr.open("GET", http.config.root + url, true);
                 xhr.responseType = options.dataType || "json";
+
                 xhr.onload = function () {
                     resolve(this.response);
                 };
+
                 xhr.error = function () {
                     reject(this.statusText);
                 };
+
                 xhr.ontimeout = function () {
                     http.config.ontimeout();
                     reject();
                 };
+
                 xhr.send();
             });
         };
@@ -55,15 +61,19 @@ export default {
                 xhr.open("POST", http.config.root + url, true);
                 xhr.responseType = options.dataType || "json";
                 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+
                 xhr.onload = function () {
                     resolve(this.response);
                 };
+
                 xhr.error = function () {
                     reject(this.statusText);
                 };
+
                 xhr.ontimeout = function () {
                     reject(http.config.ontimeout());
                 };
+
                 xhr.send(urlEncode(options.data).slice(1));
             });
         };
@@ -74,47 +84,64 @@ export default {
                 var script = document.createElement('script');
                 var timer;
                 head.appendChild(script);
+
                 window.jsonpCallback = function (data) {
                     resolve (data);
                     head.removeChild(script);
                     clearTimeout(timer);
                 };
+
                 options.data.callback = 'jsonpCallback';
-                if(url.indexOf('?') != -1){
+
+                if (url.indexOf('?') != -1) {
                     url += urlEncode(options.data);
-                }else{
+                } else {
                     url += '?' + urlEncode(options.data).slice(1);
                 }
+
                 script.src = http.config.root + url;
-                if(http.config.timeout){
+
+                if (http.config.timeout) {
                     timer = setTimeout(function () {
                         reject(http.config.ontimeout());
                         head.removeChild(script);
-                    },http.config.timeout);
+                    }, http.config.timeout);
                 }
+
             });
         };
+
         /**
          * param 将要转为URL参数字符串的对象
          * key URL参数字符串的前缀
          * encode true/false 是否进行URL编码,默认为true
          * return URL参数字符串
          */
-        let urlEncode = function (param, key, encode) {
-            if (param == null) return '';
-            var paramStr = '';
-            var t = typeof (param);
-            if (t == 'string' || t == 'number' || t == 'boolean') {
-                paramStr += '&' + key + '=' + ((encode == null || encode) ? encodeURIComponent(param) : param);
-            } else {
-                for (var i in param) {
-                    if(param.hasOwnProperty(i)){
-                        var k = key == null ? i : key + (param instanceof Array ? '[' + i + ']' : '.' + i);
-                        paramStr += urlEncode(param[i], k, encode);
-                    }
-                }
+        function urlEncode (param, key, encode) {
+
+            if (param == null) {
+                return '';
             }
-            return paramStr;
-        };
+
+            var str = '';
+            var t = typeof (param);
+
+            if (t == 'string' || t == 'number' || t == 'boolean') {
+                str += '&' + key + '=' + ((encode == null || encode) ? encodeURIComponent(param) : param);
+            } else {
+
+                for (var i in param) {
+
+                    if (param.hasOwnProperty(i)) {
+                        var k = key == null ? i : key + (param instanceof Array ? '[' + i + ']' : '.' + i);
+                        str += urlEncode(param[i], k, encode);
+                    }
+
+                }
+
+            }
+
+            return str;
+        }
     }
 }
